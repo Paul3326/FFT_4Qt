@@ -51,7 +51,7 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../pro/main.cpp \
-		../pro/mainwindow.cpp moc_mainwindow.cpp
+		../pro/src/mainwindow.cpp moc_mainwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		moc_mainwindow.o
@@ -226,6 +226,7 @@ DIST          = ../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/spec_pre.prf
 		../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/qt_config.prf \
 		../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/linux-clang/qmake.conf \
 		../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/spec_post.prf \
+		../pro/.qmake.stash \
 		../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/toolchain.prf \
 		../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/default_pre.prf \
@@ -245,8 +246,8 @@ DIST          = ../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/spec_pre.prf
 		../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/exceptions.prf \
 		../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/yacc.prf \
 		../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/lex.prf \
-		../pro/pro.pro ../pro/mainwindow.h ../pro/main.cpp \
-		../pro/mainwindow.cpp
+		../pro/pro.pro ../pro/inc/mainwindow.h ../pro/main.cpp \
+		../pro/src/mainwindow.cpp
 QMAKE_TARGET  = pro
 DESTDIR       = 
 TARGET        = pro
@@ -429,6 +430,7 @@ Makefile: ../pro/pro.pro ../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/linux-clang/
 		../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/qt_config.prf \
 		../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/linux-clang/qmake.conf \
 		../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/toolchain.prf \
 		../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/default_pre.prf \
@@ -624,6 +626,7 @@ Makefile: ../pro/pro.pro ../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/linux-clang/
 ../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/qt_config.prf:
 ../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/linux-clang/qmake.conf:
 ../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/exclusive_builds.prf:
 ../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/toolchain.prf:
 ../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/default_pre.prf:
@@ -662,9 +665,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../pro/mainwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../pro/main.cpp ../pro/mainwindow.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../pro/mainwindow.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../pro/inc/mainwindow.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../pro/main.cpp ../pro/src/mainwindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../pro/ui/mainwindow.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -805,10 +808,17 @@ moc_mainwindow.cpp: ../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/QMainWi
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qtouchdevice.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qicon.h \
-		../pro/mainwindow.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/QWidget \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/QLayout \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qlayout.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QDebug \
+		../pro/inc/mainwindow.h \
 		moc_predefs.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/bin/moc
-	/home/paul/Qt5.12.0/5.12.0/gcc_64/bin/moc $(DEFINES) --include /home/paul/qt/FFT_4Qt/Project/build-pro-Desktop_Qt_5_12_0_GCC_64bit-Debug/moc_predefs.h -I/home/paul/Qt5.12.0/5.12.0/gcc_64/mkspecs/linux-clang -I/home/paul/qt/FFT_4Qt/Project/pro -I/home/paul/Qt5.12.0/5.12.0/gcc_64/include -I/home/paul/Qt5.12.0/5.12.0/gcc_64/include/QtWidgets -I/home/paul/Qt5.12.0/5.12.0/gcc_64/include/QtGui -I/home/paul/Qt5.12.0/5.12.0/gcc_64/include/QtCore -I. -I/usr/include/c++/7.3.0 -I/usr/include/x86_64-linux-gnu/c++/7.3.0 -I/usr/include/c++/7.3.0/backward -I/usr/include/clang/6.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../pro/mainwindow.h -o moc_mainwindow.cpp
+	/home/paul/Qt5.12.0/5.12.0/gcc_64/bin/moc $(DEFINES) --include /home/paul/qt/FFT_4Qt/Project/build-pro-Desktop_Qt_5_12_0_GCC_64bit-Debug/moc_predefs.h -I/home/paul/Qt5.12.0/5.12.0/gcc_64/mkspecs/linux-clang -I/home/paul/qt/FFT_4Qt/Project/pro -I/home/paul/Qt5.12.0/5.12.0/gcc_64/include -I/home/paul/Qt5.12.0/5.12.0/gcc_64/include/QtWidgets -I/home/paul/Qt5.12.0/5.12.0/gcc_64/include/QtGui -I/home/paul/Qt5.12.0/5.12.0/gcc_64/include/QtCore -I. -I/usr/include/c++/7.3.0 -I/usr/include/x86_64-linux-gnu/c++/7.3.0 -I/usr/include/c++/7.3.0/backward -I/usr/include/clang/6.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../pro/inc/mainwindow.h -o moc_mainwindow.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -817,9 +827,9 @@ compiler_moc_source_clean:
 compiler_uic_make_all: ui_mainwindow.h
 compiler_uic_clean:
 	-$(DEL_FILE) ui_mainwindow.h
-ui_mainwindow.h: ../pro/mainwindow.ui \
+ui_mainwindow.h: ../pro/ui/mainwindow.ui \
 		../../../../Qt5.12.0/5.12.0/gcc_64/bin/uic
-	/home/paul/Qt5.12.0/5.12.0/gcc_64/bin/uic ../pro/mainwindow.ui -o ui_mainwindow.h
+	/home/paul/Qt5.12.0/5.12.0/gcc_64/bin/uic ../pro/ui/mainwindow.ui -o ui_mainwindow.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -831,7 +841,7 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 ####### Compile
 
-main.o: ../pro/main.cpp ../pro/mainwindow.h \
+main.o: ../pro/main.cpp ../pro/inc/mainwindow.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/QMainWindow \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qmainwindow.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -938,6 +948,13 @@ main.o: ../pro/main.cpp ../pro/mainwindow.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qtouchdevice.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qicon.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/QWidget \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/QLayout \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qlayout.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QDebug \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/QApplication \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qapplication.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qcoreapplication.h \
@@ -947,7 +964,7 @@ main.o: ../pro/main.cpp ../pro/mainwindow.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qinputmethod.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../pro/main.cpp
 
-mainwindow.o: ../pro/mainwindow.cpp ../pro/mainwindow.h \
+mainwindow.o: ../pro/src/mainwindow.cpp ../pro/inc/mainwindow.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/QMainWindow \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qmainwindow.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -1054,8 +1071,32 @@ mainwindow.o: ../pro/mainwindow.cpp ../pro/mainwindow.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qtouchdevice.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qicon.h \
-		ui_mainwindow.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../pro/mainwindow.cpp
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/QWidget \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/QLayout \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qlayout.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QDebug \
+		ui_mainwindow.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QVariant \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/QAction \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qaction.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qactiongroup.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/QApplication \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qapplication.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qcoreapplication.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qeventloop.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qguiapplication.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qinputmethod.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/QMenu \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qmenu.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/QMenuBar \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qmenubar.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/QStatusBar \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qstatusbar.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../pro/src/mainwindow.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

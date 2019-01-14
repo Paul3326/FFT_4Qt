@@ -6,7 +6,7 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../pro/mainwindow.h"
+#include "../pro/inc/mainwindow.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[4];
-    char stringdata0[38];
+    QByteArrayData data[29];
+    char stringdata0[436];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,12 +32,48 @@ struct qt_meta_stringdata_MainWindow_t {
 static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
     {
 QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
-QT_MOC_LITERAL(1, 11, 12), // "RTUMenu_Show"
-QT_MOC_LITERAL(2, 24, 0), // ""
-QT_MOC_LITERAL(3, 25, 12) // "SYSMenu_Show"
+QT_MOC_LITERAL(1, 11, 15), // "RTU_ParaSetting"
+QT_MOC_LITERAL(2, 27, 0), // ""
+QT_MOC_LITERAL(3, 28, 13), // "RTU_FaceCheck"
+QT_MOC_LITERAL(4, 42, 12), // "RTU_TelError"
+QT_MOC_LITERAL(5, 55, 15), // "RTU_ChangeCheck"
+QT_MOC_LITERAL(6, 71, 10), // "RTU_TelPos"
+QT_MOC_LITERAL(7, 82, 7), // "RTU_Tel"
+QT_MOC_LITERAL(8, 90, 14), // "RTU_FieldCheck"
+QT_MOC_LITERAL(9, 105, 17), // "RTU_TelVarMonitor"
+QT_MOC_LITERAL(10, 123, 16), // "RTU_ExcelManager"
+QT_MOC_LITERAL(11, 140, 15), // "SYS_ParaSetting"
+QT_MOC_LITERAL(12, 156, 17), // "SYS_ProtocSetting"
+QT_MOC_LITERAL(13, 174, 21), // "SYS_UserProtocSetting"
+QT_MOC_LITERAL(14, 196, 23), // "SYS_StandardParaSetting"
+QT_MOC_LITERAL(15, 220, 21), // "SYS_ErrorCheckManager"
+QT_MOC_LITERAL(16, 242, 22), // "SYS_ChangeCheckManager"
+QT_MOC_LITERAL(17, 265, 20), // "SYS_MeaProtocSetting"
+QT_MOC_LITERAL(18, 286, 12), // "SYS_TimeSync"
+QT_MOC_LITERAL(19, 299, 12), // "SYS_ACSource"
+QT_MOC_LITERAL(20, 312, 12), // "SYS_DCSource"
+QT_MOC_LITERAL(21, 325, 12), // "SYS_ACMesure"
+QT_MOC_LITERAL(22, 338, 12), // "SYS_Download"
+QT_MOC_LITERAL(23, 351, 10), // "SYS_Update"
+QT_MOC_LITERAL(24, 362, 11), // "SYS_Setting"
+QT_MOC_LITERAL(25, 374, 17), // "SYS_RecordSetting"
+QT_MOC_LITERAL(26, 392, 15), // "SYS_UserSetting"
+QT_MOC_LITERAL(27, 408, 18), // "SYS_AC_Calibration"
+QT_MOC_LITERAL(28, 427, 8) // "SYS_Quit"
 
     },
-    "MainWindow\0RTUMenu_Show\0\0SYSMenu_Show"
+    "MainWindow\0RTU_ParaSetting\0\0RTU_FaceCheck\0"
+    "RTU_TelError\0RTU_ChangeCheck\0RTU_TelPos\0"
+    "RTU_Tel\0RTU_FieldCheck\0RTU_TelVarMonitor\0"
+    "RTU_ExcelManager\0SYS_ParaSetting\0"
+    "SYS_ProtocSetting\0SYS_UserProtocSetting\0"
+    "SYS_StandardParaSetting\0SYS_ErrorCheckManager\0"
+    "SYS_ChangeCheckManager\0SYS_MeaProtocSetting\0"
+    "SYS_TimeSync\0SYS_ACSource\0SYS_DCSource\0"
+    "SYS_ACMesure\0SYS_Download\0SYS_Update\0"
+    "SYS_Setting\0SYS_RecordSetting\0"
+    "SYS_UserSetting\0SYS_AC_Calibration\0"
+    "SYS_Quit"
 };
 #undef QT_MOC_LITERAL
 
@@ -47,7 +83,7 @@ static const uint qt_meta_data_MainWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+      27,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -55,10 +91,60 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   24,    2, 0x08 /* Private */,
-       3,    0,   25,    2, 0x08 /* Private */,
+       1,    0,  149,    2, 0x0a /* Public */,
+       3,    0,  150,    2, 0x0a /* Public */,
+       4,    0,  151,    2, 0x0a /* Public */,
+       5,    0,  152,    2, 0x0a /* Public */,
+       6,    0,  153,    2, 0x0a /* Public */,
+       7,    0,  154,    2, 0x0a /* Public */,
+       8,    0,  155,    2, 0x0a /* Public */,
+       9,    0,  156,    2, 0x0a /* Public */,
+      10,    0,  157,    2, 0x0a /* Public */,
+      11,    0,  158,    2, 0x0a /* Public */,
+      12,    0,  159,    2, 0x0a /* Public */,
+      13,    0,  160,    2, 0x0a /* Public */,
+      14,    0,  161,    2, 0x0a /* Public */,
+      15,    0,  162,    2, 0x0a /* Public */,
+      16,    0,  163,    2, 0x0a /* Public */,
+      17,    0,  164,    2, 0x0a /* Public */,
+      18,    0,  165,    2, 0x0a /* Public */,
+      19,    0,  166,    2, 0x0a /* Public */,
+      20,    0,  167,    2, 0x0a /* Public */,
+      21,    0,  168,    2, 0x0a /* Public */,
+      22,    0,  169,    2, 0x0a /* Public */,
+      23,    0,  170,    2, 0x0a /* Public */,
+      24,    0,  171,    2, 0x0a /* Public */,
+      25,    0,  172,    2, 0x0a /* Public */,
+      26,    0,  173,    2, 0x0a /* Public */,
+      27,    0,  174,    2, 0x0a /* Public */,
+      28,    0,  175,    2, 0x0a /* Public */,
 
  // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -71,8 +157,33 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         MainWindow *_t = static_cast<MainWindow *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->RTUMenu_Show(); break;
-        case 1: _t->SYSMenu_Show(); break;
+        case 0: _t->RTU_ParaSetting(); break;
+        case 1: _t->RTU_FaceCheck(); break;
+        case 2: _t->RTU_TelError(); break;
+        case 3: _t->RTU_ChangeCheck(); break;
+        case 4: _t->RTU_TelPos(); break;
+        case 5: _t->RTU_Tel(); break;
+        case 6: _t->RTU_FieldCheck(); break;
+        case 7: _t->RTU_TelVarMonitor(); break;
+        case 8: _t->RTU_ExcelManager(); break;
+        case 9: _t->SYS_ParaSetting(); break;
+        case 10: _t->SYS_ProtocSetting(); break;
+        case 11: _t->SYS_UserProtocSetting(); break;
+        case 12: _t->SYS_StandardParaSetting(); break;
+        case 13: _t->SYS_ErrorCheckManager(); break;
+        case 14: _t->SYS_ChangeCheckManager(); break;
+        case 15: _t->SYS_MeaProtocSetting(); break;
+        case 16: _t->SYS_TimeSync(); break;
+        case 17: _t->SYS_ACSource(); break;
+        case 18: _t->SYS_DCSource(); break;
+        case 19: _t->SYS_ACMesure(); break;
+        case 20: _t->SYS_Download(); break;
+        case 21: _t->SYS_Update(); break;
+        case 22: _t->SYS_Setting(); break;
+        case 23: _t->SYS_RecordSetting(); break;
+        case 24: _t->SYS_UserSetting(); break;
+        case 25: _t->SYS_AC_Calibration(); break;
+        case 26: _t->SYS_Quit(); break;
         default: ;
         }
     }
@@ -108,13 +219,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 27)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 27;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 27)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 2;
+        _id -= 27;
     }
     return _id;
 }
