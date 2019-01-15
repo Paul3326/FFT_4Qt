@@ -51,10 +51,14 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../pro/main.cpp \
-		../pro/src/mainwindow.cpp moc_mainwindow.cpp
+		../pro/src/mainwindow.cpp \
+		../pro/src/rtu_para.cpp moc_mainwindow.cpp \
+		moc_rtu_para.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
-		moc_mainwindow.o
+		rtu_para.o \
+		moc_mainwindow.o \
+		moc_rtu_para.o
 DIST          = ../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/common/unix.conf \
 		../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/common/linux.conf \
@@ -246,8 +250,10 @@ DIST          = ../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/spec_pre.prf
 		../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/exceptions.prf \
 		../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/yacc.prf \
 		../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/lex.prf \
-		../pro/pro.pro ../pro/inc/mainwindow.h ../pro/main.cpp \
-		../pro/src/mainwindow.cpp
+		../pro/pro.pro ../pro/inc/mainwindow.h \
+		../pro/inc/rtu_para.h ../pro/main.cpp \
+		../pro/src/mainwindow.cpp \
+		../pro/src/rtu_para.cpp
 QMAKE_TARGET  = pro
 DESTDIR       = 
 TARGET        = pro
@@ -256,7 +262,7 @@ TARGET        = pro
 first: all
 ####### Build rules
 
-pro: ui_mainwindow.h $(OBJECTS)  
+pro: ui_mainwindow.h ui_rtu_para.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../pro/pro.pro ../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/linux-clang/qmake.conf ../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/spec_pre.prf \
@@ -665,9 +671,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../pro/inc/mainwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../pro/main.cpp ../pro/src/mainwindow.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../pro/ui/mainwindow.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../pro/inc/mainwindow.h ../pro/inc/rtu_para.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../pro/main.cpp ../pro/src/mainwindow.cpp ../pro/src/rtu_para.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../pro/ui/mainwindow.ui ../pro/ui/rtu_para.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -699,9 +705,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: ../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/data/dummy.cpp
 	clang++ -pipe -g -std=gnu++11 -Wall -W -dM -E -o moc_predefs.h ../../../../Qt5.12.0/5.12.0/gcc_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_rtu_para.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_rtu_para.cpp
 moc_mainwindow.cpp: ../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/QMainWindow \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qmainwindow.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -820,16 +826,129 @@ moc_mainwindow.cpp: ../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/QMainWi
 		../../../../Qt5.12.0/5.12.0/gcc_64/bin/moc
 	/home/paul/Qt5.12.0/5.12.0/gcc_64/bin/moc $(DEFINES) --include /home/paul/qt/FFT_4Qt/Project/build-pro-Desktop_Qt_5_12_0_GCC_64bit-Debug/moc_predefs.h -I/home/paul/Qt5.12.0/5.12.0/gcc_64/mkspecs/linux-clang -I/home/paul/qt/FFT_4Qt/Project/pro -I/home/paul/Qt5.12.0/5.12.0/gcc_64/include -I/home/paul/Qt5.12.0/5.12.0/gcc_64/include/QtWidgets -I/home/paul/Qt5.12.0/5.12.0/gcc_64/include/QtGui -I/home/paul/Qt5.12.0/5.12.0/gcc_64/include/QtCore -I. -I/usr/include/c++/7.3.0 -I/usr/include/x86_64-linux-gnu/c++/7.3.0 -I/usr/include/c++/7.3.0/backward -I/usr/include/clang/6.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../pro/inc/mainwindow.h -o moc_mainwindow.cpp
 
+moc_rtu_para.cpp: ../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/QDialog \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qdialog.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qtguiglobal.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qglobal.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qconfig.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qtcore-config.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qsystemdetection.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qprocessordetection.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qtypeinfo.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qsysinfo.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qlogging.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qflags.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qatomic.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qbasicatomic.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qgenericatomic.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qglobalstatic.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qmutex.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qnumeric.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qversiontagging.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qtgui-config.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qwidget.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qwindowdefs.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qobjectdefs.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qnamespace.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qwindowdefs_win.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qobject.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qstring.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qchar.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qbytearray.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qrefcount.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qarraydata.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qstringliteral.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qstringalgorithms.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qstringview.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qstringbuilder.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qlist.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qalgorithms.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qiterator.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qhashfunctions.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qpair.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qbytearraylist.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qstringlist.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qregexp.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qstringmatcher.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qcoreevent.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qscopedpointer.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qmetatype.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qobject_impl.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qmargins.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qpaintdevice.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qrect.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qsize.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qpoint.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qpalette.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qcolor.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qrgb.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qrgba64.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qbrush.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qvector.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qmatrix.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qpolygon.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qregion.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qdatastream.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qiodevice.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qline.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qtransform.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qpainterpath.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qimage.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qpixelformat.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qpixmap.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qsharedpointer.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qshareddata.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qhash.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qfont.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qfontmetrics.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qfontinfo.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qsizepolicy.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qcursor.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qkeysequence.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qevent.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qvariant.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qmap.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qdebug.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qtextstream.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qlocale.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qset.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qurl.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qurlquery.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qfile.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qfiledevice.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qvector2d.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qtouchdevice.h \
+		../pro/inc/rtu_para.h \
+		moc_predefs.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/bin/moc
+	/home/paul/Qt5.12.0/5.12.0/gcc_64/bin/moc $(DEFINES) --include /home/paul/qt/FFT_4Qt/Project/build-pro-Desktop_Qt_5_12_0_GCC_64bit-Debug/moc_predefs.h -I/home/paul/Qt5.12.0/5.12.0/gcc_64/mkspecs/linux-clang -I/home/paul/qt/FFT_4Qt/Project/pro -I/home/paul/Qt5.12.0/5.12.0/gcc_64/include -I/home/paul/Qt5.12.0/5.12.0/gcc_64/include/QtWidgets -I/home/paul/Qt5.12.0/5.12.0/gcc_64/include/QtGui -I/home/paul/Qt5.12.0/5.12.0/gcc_64/include/QtCore -I. -I/usr/include/c++/7.3.0 -I/usr/include/x86_64-linux-gnu/c++/7.3.0 -I/usr/include/c++/7.3.0/backward -I/usr/include/clang/6.0.0/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../pro/inc/rtu_para.h -o moc_rtu_para.cpp
+
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h
+compiler_uic_make_all: ui_mainwindow.h ui_rtu_para.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h
+	-$(DEL_FILE) ui_mainwindow.h ui_rtu_para.h
 ui_mainwindow.h: ../pro/ui/mainwindow.ui \
 		../../../../Qt5.12.0/5.12.0/gcc_64/bin/uic
 	/home/paul/Qt5.12.0/5.12.0/gcc_64/bin/uic ../pro/ui/mainwindow.ui -o ui_mainwindow.h
+
+ui_rtu_para.h: ../pro/ui/rtu_para.ui \
+		../../../../Qt5.12.0/5.12.0/gcc_64/bin/uic
+	/home/paul/Qt5.12.0/5.12.0/gcc_64/bin/uic ../pro/ui/rtu_para.ui -o ui_rtu_para.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -1095,11 +1214,20 @@ mainwindow.o: ../pro/src/mainwindow.cpp ../pro/inc/mainwindow.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/QMenuBar \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qmenubar.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/QStatusBar \
-		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qstatusbar.h
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qstatusbar.h \
+		../pro/inc/rtu_para.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/QDialog \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../pro/src/mainwindow.cpp
+
+rtu_para.o: ../pro/src/rtu_para.cpp ui_rtu_para.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o rtu_para.o ../pro/src/rtu_para.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
+
+moc_rtu_para.o: moc_rtu_para.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_rtu_para.o moc_rtu_para.cpp
 
 ####### Install
 

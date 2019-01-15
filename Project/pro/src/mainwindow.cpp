@@ -1,5 +1,6 @@
 #include "inc/mainwindow.h"
 #include "ui_mainwindow.h"
+#include "inc/rtu_para.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -43,6 +44,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::RTU_ParaSetting()
 {
+    rtu_para para_dialog;
+    this->close();
+    para_dialog.exec();
     qDebug()<<"RTU_ParaSetting";
 }
 
