@@ -3,6 +3,9 @@
 
 #include <QDialog>
 #include <QDebug>
+#include <QString>
+#include <QStringList>
+
 namespace Ui {
 class rtu_para;
 }
@@ -23,7 +26,13 @@ private slots:
 private:
     Ui::rtu_para *ui;
     uint8_t para_flag;     //cancel:0x01 save:0x02
-    uint8_t para_page;
+    uint8_t para_current_page;
+    uint8_t para_total_page;
+
+    QString rtu_para_csv;
+
+    void rtu_para_write();
+    void rtu_para_read();
 };
 
 #endif // RTU_PARA_H

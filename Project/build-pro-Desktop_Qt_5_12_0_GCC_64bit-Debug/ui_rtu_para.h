@@ -9,6 +9,7 @@
 #ifndef UI_RTU_PARA_H
 #define UI_RTU_PARA_H
 
+#include <QtCore/QLocale>
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
@@ -249,8 +250,12 @@ public:
         te_uid_number->setGeometry(QRect(410, 364, 181, 30));
         te_record_page = new QTextEdit(rtu_para);
         te_record_page->setObjectName(QString::fromUtf8("te_record_page"));
-        te_record_page->setGeometry(QRect(590, 490, 51, 31));
+        te_record_page->setGeometry(QRect(600, 490, 41, 31));
+        te_record_page->setLayoutDirection(Qt::LeftToRight);
+        te_record_page->setLocale(QLocale(QLocale::Chinese, QLocale::China));
+        te_record_page->setFrameShape(QFrame::Box);
         te_record_page->setReadOnly(true);
+        te_record_page->setTextInteractionFlags(Qt::NoTextInteraction);
         te_check_number = new QTextEdit(rtu_para);
         te_check_number->setObjectName(QString::fromUtf8("te_check_number"));
         te_check_number->setGeometry(QRect(120, 361, 171, 30));
@@ -266,6 +271,7 @@ public:
         splitter->setOrientation(Qt::Horizontal);
         pb_add = new QPushButton(splitter);
         pb_add->setObjectName(QString::fromUtf8("pb_add"));
+        pb_add->setLocale(QLocale(QLocale::Chinese, QLocale::China));
         splitter->addWidget(pb_add);
         pb_save = new QPushButton(splitter);
         pb_save->setObjectName(QString::fromUtf8("pb_save"));

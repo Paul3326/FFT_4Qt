@@ -27,11 +27,13 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         src/mainwindow.cpp \
-        src/rtu_para.cpp
+        src/rtu_para.cpp \
+        src/file.cpp
 
 HEADERS += \
         inc/mainwindow.h \
-        inc/rtu_para.h
+        inc/rtu_para.h \
+        inc/file.h
 
 FORMS += \
         ui/mainwindow.ui \
