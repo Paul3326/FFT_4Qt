@@ -1,6 +1,7 @@
 #include "inc/mainwindow.h"
 #include "ui_mainwindow.h"
 #include "inc/rtu_para.h"
+#include "inc/rtu_facecheck.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -42,49 +43,62 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+//RTU参数录入
 void MainWindow::RTU_ParaSetting()
 {
+    qDebug()<<"RTU参数录入";
     rtu_para para_dialog;
-    this->close();
+    //this->close();
     para_dialog.exec();
-    qDebug()<<"RTU_ParaSetting";
+
 }
 
+//外观检查、耐压试验
 void MainWindow::RTU_FaceCheck()
 {
-    qDebug()<<"RTU_FaceCheck";
+    qDebug()<<"外观检查、耐压试验";
+    rtu_facecheck para_dialog;
+    //this->close();
+    para_dialog.exec();
 }
 
+//遥测误差检验
 void MainWindow::RTU_TelError()
 {
-    qDebug()<<"RTU_TelError";
+    qDebug()<<"遥测误差检验";
 }
 
+//改变量
 void MainWindow::RTU_ChangeCheck()
 {
-    qDebug()<<"RTU_ChangeCheck";
+    qDebug()<<"改变量";
 }
 
+//遥信变位试验
 void MainWindow::RTU_TelPos()
 {
-    qDebug()<<"RTU_TelPos";
+    qDebug()<<"遥信变位试验";
 }
 
+//遥控试验
 void MainWindow::RTU_Tel()
 {
     qDebug()<<"RTU_Tel";
 }
 
+//现场校验
 void MainWindow::RTU_FieldCheck()
 {
-    qDebug()<<"RTU_FieldCheck";
+    qDebug()<<"现场校验";
 }
 
+//遥控量监测
 void MainWindow::RTU_TelVarMonitor()
 {
-    qDebug()<<"RTU_TelVarMonitor";
+    qDebug()<<"遥控量监测";
 }
 
+//Excel
 void MainWindow::RTU_ExcelManager()
 {
     qDebug()<<"RTU_ExcelManager";

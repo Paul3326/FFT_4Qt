@@ -26,18 +26,21 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
+        src/file.cpp \
         src/mainwindow.cpp \
         src/rtu_para.cpp \
-        src/file.cpp
+        src/rtu_facecheck.cpp
 
 HEADERS += \
         inc/mainwindow.h \
         inc/rtu_para.h \
-        inc/file.h
+        inc/file.h \
+        inc/rtu_facecheck.h
 
 FORMS += \
         ui/mainwindow.ui \
         ui/rtu_para.ui \
+        ui/rtu_facecheck.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

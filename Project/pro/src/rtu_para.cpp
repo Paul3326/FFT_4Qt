@@ -15,7 +15,7 @@ rtu_para::rtu_para(QWidget *parent) :
 
     ui->setupUi(this);
     this->setWindowTitle(rtu_para_csv);
-    ui->pb_save->setEnabled(false);
+
     //init para
     rtu_para_init();
 }
@@ -30,6 +30,17 @@ void rtu_para::rtu_para_init()
     para_flag = 0xff;
     para_total_page = 0x01;
     para_current_page = 0x01;
+
+    if(1 == para_total_page)
+    {
+        ui->pb_add->setText("取消");
+        ui->pb_save->setEnabled(true);
+        ui->pb_next->setEnabled(false);
+        ui->pb_previous->setEnabled(false);
+        ui->pb_delete->setEnabled(false);
+        ui->pb_search->setEnabled(false);
+        ui->pb_tel_para->setEnabled(false);
+    }
 
 }
 
@@ -103,16 +114,6 @@ void rtu_para::on_pb_add_clicked()
     qDebug()<<para_flag;
     if(para_flag&0xfe)
     {
-        ui->pb_add->setText("增加");
-        ui->pb_save->setEnabled(false);
-        ui->pb_next->setEnabled(true);
-        ui->pb_previous->setEnabled(true);
-        ui->pb_delete->setEnabled(true);
-        ui->pb_search->setEnabled(true);
-        ui->pb_tel_para->setEnabled(true);
-    }
-    else
-    {
         ui->pb_add->setText("取消");
         ui->pb_save->setEnabled(true);
         ui->pb_next->setEnabled(false);
@@ -120,6 +121,18 @@ void rtu_para::on_pb_add_clicked()
         ui->pb_delete->setEnabled(false);
         ui->pb_search->setEnabled(false);
         ui->pb_tel_para->setEnabled(false);
+    }
+    else
+    {
+        ui->pb_add->setText("增加");
+        if(1 == para_total_page)
+            return;
+        ui->pb_save->setEnabled(false);
+        ui->pb_next->setEnabled(true);
+        ui->pb_previous->setEnabled(true);
+        ui->pb_delete->setEnabled(true);
+        ui->pb_search->setEnabled(true);
+        ui->pb_tel_para->setEnabled(true);
     }
 }
 
@@ -154,14 +167,15 @@ void rtu_para::on_pb_previous_clicked()
         ui->pb_previous->setEnabled(false);
         ui->pb_next->setEnabled(true);
     }
-    else {
+    else
+    {
         ui->pb_next->setEnabled(true);
     }
 
 
     ui->te_record_page->setText(QString::number(para_current_page));
     strl = rtu_para_read(1,para_current_page);
-    rtu_show(strl);
+    //rtu_show(strl);
 }
 
 void rtu_para::on_pb_next_clicked()

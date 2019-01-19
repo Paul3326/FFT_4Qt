@@ -17,6 +17,10 @@ class rtu_para : public QDialog
 public:
     explicit rtu_para(QWidget *parent = nullptr);
     ~rtu_para();
+    uint8_t para_current_page;
+    uint8_t para_total_page;
+    QString rtu_station;
+    QString rtu_position;
 
 private slots:
     void on_pb_add_clicked();
@@ -30,9 +34,6 @@ private slots:
 private:
     Ui::rtu_para *ui;
     uint8_t para_flag;     //cancel:0x01 save:0x02
-    uint8_t para_current_page;
-    uint8_t para_total_page;
-
     QString rtu_para_csv;
     void rtu_para_init();
 
