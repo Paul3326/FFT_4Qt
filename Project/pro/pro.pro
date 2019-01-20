@@ -30,20 +30,29 @@ SOURCES += \
         src/mainwindow.cpp \
         src/rtu_para.cpp \
         src/rtu_facecheck.cpp \
-    src/rtu_telerror.cpp
+        src/rtu_telerror.cpp \
+        src/rtu_changecheck.cpp \
+        src/rtu_fieldcheck.cpp \
+        src/rtu_telvarmonitor.cpp
 
 HEADERS += \
         inc/mainwindow.h \
         inc/rtu_para.h \
         inc/file.h \
         inc/rtu_facecheck.h \
-    inc/rtu_telerror.h
+        inc/rtu_telerror.h \
+        inc/rtu_changecheck.h \
+        inc/rtu_fieldcheck.h \
+        inc/rtu_telvarmonitor.h
 
 FORMS += \
         ui/mainwindow.ui \
         ui/rtu_para.ui \
         ui/rtu_facecheck.ui \
-    ui/rtu_telerror.ui
+        ui/rtu_telerror.ui \
+        ui/rtu_changecheck.ui \
+        ui/rtu_fieldcheck.ui \
+        ui/rtu_telvarmonitor.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

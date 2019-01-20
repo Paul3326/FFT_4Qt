@@ -10,7 +10,7 @@ rtu_para::rtu_para(QWidget *parent) :
 {
     file rtufile;
     //get current file path
-    rtu_para_csv = "RTU参数录入" + QApplication::applicationDirPath() + FILE_PATH;
+    rtu_para_csv = tr("RTU参数录入") + QApplication::applicationDirPath() + FILE_PATH;
     rtufile.file_create(FILE_PATH);
 
     ui->setupUi(this);

@@ -5,6 +5,7 @@
 #include <QWidget>
 #include <QLayout>
 #include <QDebug>
+#include <QMessageBox>
 
 namespace Ui {
 class MainWindow;

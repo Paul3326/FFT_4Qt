@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>920</width>
-    <height>760</height>
+    <height>720</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -70,17 +70,8 @@
        <pointsize>9</pointsize>
       </font>
      </property>
-     <property name="textElideMode">
-      <enum>Qt::ElideLeft</enum>
-     </property>
-     <attribute name="horizontalHeaderVisible">
-      <bool>false</bool>
-     </attribute>
      <attribute name="horizontalHeaderDefaultSectionSize">
       <number>96</number>
-     </attribute>
-     <attribute name="horizontalHeaderHighlightSections">
-      <bool>false</bool>
      </attribute>
      <attribute name="horizontalHeaderMinimumSectionSize">
       <number>60</number>
@@ -363,11 +354,6 @@
       <property name="text">
        <string>2</string>
       </property>
-      <property name="font">
-       <font>
-        <pointsize>9</pointsize>
-       </font>
-      </property>
       <property name="textAlignment">
        <set>AlignCenter</set>
       </property>
@@ -387,11 +373,6 @@
      <item row="2" column="0">
       <property name="text">
        <string>3</string>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>9</pointsize>
-       </font>
       </property>
       <property name="textAlignment">
        <set>AlignCenter</set>
@@ -413,11 +394,6 @@
       <property name="text">
        <string>4</string>
       </property>
-      <property name="font">
-       <font>
-        <pointsize>9</pointsize>
-       </font>
-      </property>
       <property name="textAlignment">
        <set>AlignCenter</set>
       </property>
@@ -437,11 +413,6 @@
      <item row="4" column="0">
       <property name="text">
        <string>5</string>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>9</pointsize>
-       </font>
       </property>
       <property name="textAlignment">
        <set>AlignCenter</set>
@@ -463,11 +434,6 @@
       <property name="text">
        <string>6</string>
       </property>
-      <property name="font">
-       <font>
-        <pointsize>9</pointsize>
-       </font>
-      </property>
       <property name="textAlignment">
        <set>AlignCenter</set>
       </property>
@@ -487,11 +453,6 @@
      <item row="6" column="0">
       <property name="text">
        <string>7</string>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>9</pointsize>
-       </font>
       </property>
       <property name="textAlignment">
        <set>AlignCenter</set>
@@ -513,11 +474,6 @@
       <property name="text">
        <string>8</string>
       </property>
-      <property name="font">
-       <font>
-        <pointsize>9</pointsize>
-       </font>
-      </property>
       <property name="textAlignment">
        <set>AlignCenter</set>
       </property>
@@ -537,11 +493,6 @@
      <item row="8" column="0">
       <property name="text">
        <string>9</string>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>9</pointsize>
-       </font>
       </property>
       <property name="textAlignment">
        <set>AlignCenter</set>
@@ -5899,7 +5850,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>517</y>
+     <y>497</y>
      <width>67</width>
      <height>17</height>
     </rect>
@@ -5912,7 +5863,7 @@
    <property name="geometry">
     <rect>
      <x>24</x>
-     <y>571</y>
+     <y>543</y>
      <width>71</width>
      <height>20</height>
     </rect>
@@ -5925,7 +5876,7 @@
    <property name="geometry">
     <rect>
      <x>57</x>
-     <y>634</y>
+     <y>594</y>
      <width>71</width>
      <height>20</height>
     </rect>
@@ -5938,7 +5889,7 @@
    <property name="geometry">
     <rect>
      <x>320</x>
-     <y>634</y>
+     <y>594</y>
      <width>71</width>
      <height>20</height>
     </rect>
@@ -5951,7 +5902,7 @@
    <property name="geometry">
     <rect>
      <x>320</x>
-     <y>570</y>
+     <y>542</y>
      <width>71</width>
      <height>20</height>
     </rect>
@@ -5964,7 +5915,7 @@
    <property name="geometry">
     <rect>
      <x>290</x>
-     <y>517</y>
+     <y>497</y>
      <width>67</width>
      <height>17</height>
     </rect>
@@ -5977,7 +5928,7 @@
    <property name="geometry">
     <rect>
      <x>570</x>
-     <y>570</y>
+     <y>542</y>
      <width>71</width>
      <height>20</height>
     </rect>
@@ -5990,7 +5941,7 @@
    <property name="geometry">
     <rect>
      <x>610</x>
-     <y>634</y>
+     <y>594</y>
      <width>71</width>
      <height>20</height>
     </rect>
@@ -6003,7 +5954,7 @@
    <property name="geometry">
     <rect>
      <x>570</x>
-     <y>517</y>
+     <y>497</y>
      <width>67</width>
      <height>17</height>
     </rect>
@@ -6016,7 +5967,7 @@
    <property name="geometry">
     <rect>
      <x>110</x>
-     <y>510</y>
+     <y>490</y>
      <width>161</width>
      <height>30</height>
     </rect>
@@ -6041,7 +5992,7 @@
    <property name="geometry">
     <rect>
      <x>110</x>
-     <y>568</y>
+     <y>540</y>
      <width>161</width>
      <height>30</height>
     </rect>
@@ -6066,7 +6017,7 @@
    <property name="geometry">
     <rect>
      <x>110</x>
-     <y>630</y>
+     <y>590</y>
      <width>161</width>
      <height>30</height>
     </rect>
@@ -6106,7 +6057,7 @@
    <property name="geometry">
     <rect>
      <x>370</x>
-     <y>568</y>
+     <y>540</y>
      <width>161</width>
      <height>30</height>
     </rect>
@@ -6156,7 +6107,7 @@
    <property name="geometry">
     <rect>
      <x>370</x>
-     <y>630</y>
+     <y>590</y>
      <width>161</width>
      <height>30</height>
     </rect>
@@ -6186,7 +6137,7 @@
    <property name="geometry">
     <rect>
      <x>370</x>
-     <y>510</y>
+     <y>490</y>
      <width>161</width>
      <height>30</height>
     </rect>
@@ -6196,7 +6147,7 @@
    <property name="geometry">
     <rect>
      <x>660</x>
-     <y>568</y>
+     <y>540</y>
      <width>161</width>
      <height>30</height>
     </rect>
@@ -6206,7 +6157,7 @@
    <property name="geometry">
     <rect>
      <x>660</x>
-     <y>630</y>
+     <y>590</y>
      <width>161</width>
      <height>30</height>
     </rect>
@@ -6236,7 +6187,7 @@
    <property name="geometry">
     <rect>
      <x>660</x>
-     <y>510</y>
+     <y>490</y>
      <width>161</width>
      <height>30</height>
     </rect>
@@ -6246,7 +6197,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>700</y>
+     <y>660</y>
      <width>89</width>
      <height>35</height>
     </rect>
@@ -6259,7 +6210,7 @@
    <property name="geometry">
     <rect>
      <x>210</x>
-     <y>700</y>
+     <y>660</y>
      <width>89</width>
      <height>35</height>
     </rect>
@@ -6272,7 +6223,7 @@
    <property name="geometry">
     <rect>
      <x>420</x>
-     <y>700</y>
+     <y>660</y>
      <width>89</width>
      <height>35</height>
     </rect>
@@ -6285,7 +6236,7 @@
    <property name="geometry">
     <rect>
      <x>620</x>
-     <y>700</y>
+     <y>660</y>
      <width>89</width>
      <height>35</height>
     </rect>
@@ -6298,7 +6249,7 @@
    <property name="geometry">
     <rect>
      <x>800</x>
-     <y>700</y>
+     <y>660</y>
      <width>89</width>
      <height>35</height>
     </rect>

@@ -3,6 +3,9 @@
 #include "inc/rtu_para.h"
 #include "inc/rtu_facecheck.h"
 #include "inc/rtu_telerror.h"
+#include "inc/rtu_changecheck.h"
+#include "inc/rtu_fieldcheck.h"
+#include "inc/rtu_telvarmonitor.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -75,30 +78,38 @@ void MainWindow::RTU_TelError()
 void MainWindow::RTU_ChangeCheck()
 {
     qDebug()<<"改变量";
+    rtu_changecheck para_dialog;
+    para_dialog.exec();
 }
 
 //遥信变位试验
 void MainWindow::RTU_TelPos()
 {
     qDebug()<<"遥信变位试验";
+    QMessageBox::information(nullptr, tr("提示"), tr("暂未实现！"),tr("确定"));
 }
 
 //遥控试验
 void MainWindow::RTU_Tel()
 {
-    qDebug()<<"RTU_Tel";
+    qDebug()<<"遥控试验";
+    QMessageBox::information(nullptr, tr("提示"), tr("暂未实现！"),tr("确定"));
 }
 
 //现场校验
 void MainWindow::RTU_FieldCheck()
 {
     qDebug()<<"现场校验";
+    rtu_fieldcheck para_dialog;
+    para_dialog.exec();
 }
 
 //遥控量监测
 void MainWindow::RTU_TelVarMonitor()
 {
     qDebug()<<"遥控量监测";
+    rtu_telvarmonitor para_dialog;
+    para_dialog.exec();
 }
 
 //Excel

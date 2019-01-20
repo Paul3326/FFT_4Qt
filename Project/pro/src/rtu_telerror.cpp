@@ -5,7 +5,7 @@ rtu_telerror::rtu_telerror(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::rtu_telerror)
 {
-    QString title = "遥测误差检验";
+    QString title = tr("遥测误差检验");
 
     ui->setupUi(this);
     this->setWindowTitle(title);
