@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "inc/rtu_para.h"
 #include "inc/rtu_facecheck.h"
+#include "inc/rtu_telerror.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -66,6 +67,8 @@ void MainWindow::RTU_FaceCheck()
 void MainWindow::RTU_TelError()
 {
     qDebug()<<"遥测误差检验";
+    rtu_telerror para_dialog;
+    para_dialog.exec();
 }
 
 //改变量
