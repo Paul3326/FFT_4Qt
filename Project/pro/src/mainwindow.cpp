@@ -7,6 +7,7 @@
 #include "inc/rtu_fieldcheck.h"
 #include "inc/rtu_telvarmonitor.h"
 #include "inc/rtu_excelmanger.h"
+#include "inc/sys_para.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -122,10 +123,12 @@ void MainWindow::RTU_ExcelManager()
 }
 
 
-//SYS
+//系统参数设置
 void MainWindow::SYS_ParaSetting()
 {
-    qDebug()<<"SYS_ParaSetting";
+    qDebug()<<"系统参数设置";
+    sys_para para_dialog;
+    para_dialog.exec();
 }
 
 void MainWindow::SYS_ProtocSetting()
