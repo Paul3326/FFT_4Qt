@@ -35,7 +35,7 @@
     <locale language="Chinese" country="China"/>
    </property>
    <property name="currentIndex">
-    <number>9</number>
+    <number>0</number>
    </property>
    <property name="iconSize">
     <size>
@@ -69,6 +69,9 @@
       <font>
        <pointsize>9</pointsize>
       </font>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SingleSelection</enum>
      </property>
      <attribute name="horizontalHeaderDefaultSectionSize">
       <number>96</number>
@@ -530,6 +533,12 @@
        <pointsize>9</pointsize>
       </font>
      </property>
+     <property name="contextMenuPolicy">
+      <enum>Qt::DefaultContextMenu</enum>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SingleSelection</enum>
+     </property>
      <attribute name="horizontalHeaderDefaultSectionSize">
       <number>96</number>
      </attribute>
@@ -990,6 +999,9 @@
        <pointsize>9</pointsize>
       </font>
      </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SingleSelection</enum>
+     </property>
      <attribute name="horizontalHeaderDefaultSectionSize">
       <number>96</number>
      </attribute>
@@ -1398,6 +1410,9 @@
       <font>
        <pointsize>9</pointsize>
       </font>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SingleSelection</enum>
      </property>
      <attribute name="horizontalHeaderDefaultSectionSize">
       <number>96</number>
@@ -1813,6 +1828,9 @@
      </property>
      <property name="showDropIndicator" stdset="0">
       <bool>true</bool>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SingleSelection</enum>
      </property>
      <property name="cornerButtonEnabled">
       <bool>false</bool>
@@ -2831,6 +2849,9 @@
      <property name="showDropIndicator" stdset="0">
       <bool>true</bool>
      </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SingleSelection</enum>
+     </property>
      <property name="cornerButtonEnabled">
       <bool>false</bool>
      </property>
@@ -3842,6 +3863,9 @@
        <pointsize>9</pointsize>
       </font>
      </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SingleSelection</enum>
+     </property>
      <attribute name="horizontalHeaderDefaultSectionSize">
       <number>96</number>
      </attribute>
@@ -4319,6 +4343,9 @@
        <pointsize>9</pointsize>
       </font>
      </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SingleSelection</enum>
+     </property>
      <attribute name="horizontalHeaderDefaultSectionSize">
       <number>96</number>
      </attribute>
@@ -4697,6 +4724,9 @@
       <font>
        <pointsize>9</pointsize>
       </font>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SingleSelection</enum>
      </property>
      <attribute name="horizontalHeaderDefaultSectionSize">
       <number>96</number>
@@ -5112,6 +5142,9 @@
      </property>
      <property name="showDropIndicator" stdset="0">
       <bool>true</bool>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SingleSelection</enum>
      </property>
      <property name="cornerButtonEnabled">
       <bool>false</bool>

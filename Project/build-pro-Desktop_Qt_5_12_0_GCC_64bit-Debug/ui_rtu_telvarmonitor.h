@@ -235,6 +235,7 @@ public:
         tableWidget->setItem(23, 2, __qtablewidgetitem98);
         tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
         tableWidget->setGeometry(QRect(0, 0, 321, 411));
+        tableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
         tableWidget->verticalHeader()->setVisible(false);
         tableWidget->verticalHeader()->setHighlightSections(false);
         pb_clear = new QPushButton(rtu_telvarmonitor);

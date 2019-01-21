@@ -6,6 +6,7 @@
 #include "inc/rtu_changecheck.h"
 #include "inc/rtu_fieldcheck.h"
 #include "inc/rtu_telvarmonitor.h"
+#include "inc/rtu_excelmanger.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -116,6 +117,8 @@ void MainWindow::RTU_TelVarMonitor()
 void MainWindow::RTU_ExcelManager()
 {
     qDebug()<<"RTU_ExcelManager";
+    rtu_excelmanger para_dialog;
+    para_dialog.exec();
 }
 
 

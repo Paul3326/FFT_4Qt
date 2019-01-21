@@ -33,7 +33,8 @@ SOURCES += \
         src/rtu_telerror.cpp \
         src/rtu_changecheck.cpp \
         src/rtu_fieldcheck.cpp \
-        src/rtu_telvarmonitor.cpp
+        src/rtu_telvarmonitor.cpp \
+        src/rtu_excelmanger.cpp
 
 HEADERS += \
         inc/mainwindow.h \
@@ -43,7 +44,8 @@ HEADERS += \
         inc/rtu_telerror.h \
         inc/rtu_changecheck.h \
         inc/rtu_fieldcheck.h \
-        inc/rtu_telvarmonitor.h
+        inc/rtu_telvarmonitor.h \
+        inc/rtu_excelmanger.h
 
 FORMS += \
         ui/mainwindow.ui \
@@ -52,7 +54,8 @@ FORMS += \
         ui/rtu_telerror.ui \
         ui/rtu_changecheck.ui \
         ui/rtu_fieldcheck.ui \
-        ui/rtu_telvarmonitor.ui
+        ui/rtu_telvarmonitor.ui \
+        ui/rtu_excelmanger.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

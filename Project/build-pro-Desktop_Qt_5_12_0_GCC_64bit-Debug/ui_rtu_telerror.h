@@ -213,6 +213,7 @@ public:
         tb_av->setObjectName(QString::fromUtf8("tb_av"));
         tb_av->setGeometry(QRect(0, 0, 867, 295));
         tb_av->setFont(font);
+        tb_av->setSelectionMode(QAbstractItemView::SingleSelection);
         tb_av->horizontalHeader()->setDefaultSectionSize(96);
         tb_av->horizontalHeader()->setMinimumSectionSize(60);
         tb_av->verticalHeader()->setVisible(false);
@@ -337,6 +338,8 @@ public:
         tb_ac->setObjectName(QString::fromUtf8("tb_ac"));
         tb_ac->setGeometry(QRect(0, 0, 867, 295));
         tb_ac->setFont(font);
+        tb_ac->setContextMenuPolicy(Qt::DefaultContextMenu);
+        tb_ac->setSelectionMode(QAbstractItemView::SingleSelection);
         tb_ac->horizontalHeader()->setDefaultSectionSize(96);
         tb_ac->horizontalHeader()->setMinimumSectionSize(60);
         tb_ac->verticalHeader()->setVisible(false);
@@ -448,6 +451,7 @@ public:
         tb_dv->setObjectName(QString::fromUtf8("tb_dv"));
         tb_dv->setGeometry(QRect(0, 0, 579, 265));
         tb_dv->setFont(font);
+        tb_dv->setSelectionMode(QAbstractItemView::SingleSelection);
         tb_dv->horizontalHeader()->setDefaultSectionSize(96);
         tb_dv->horizontalHeader()->setMinimumSectionSize(60);
         tb_dv->verticalHeader()->setVisible(false);
@@ -559,6 +563,7 @@ public:
         tb_dc->setObjectName(QString::fromUtf8("tb_dc"));
         tb_dc->setGeometry(QRect(0, 0, 579, 265));
         tb_dc->setFont(font);
+        tb_dc->setSelectionMode(QAbstractItemView::SingleSelection);
         tb_dc->horizontalHeader()->setDefaultSectionSize(96);
         tb_dc->horizontalHeader()->setMinimumSectionSize(60);
         tb_dc->verticalHeader()->setVisible(false);
@@ -832,6 +837,7 @@ public:
         tb_p->setFont(font);
         tb_p->setAutoScroll(true);
         tb_p->setProperty("showDropIndicator", QVariant(true));
+        tb_p->setSelectionMode(QAbstractItemView::SingleSelection);
         tb_p->setCornerButtonEnabled(false);
         tb_p->horizontalHeader()->setCascadingSectionResizes(true);
         tb_p->horizontalHeader()->setDefaultSectionSize(96);
@@ -1107,6 +1113,7 @@ public:
         tb_q->setFont(font);
         tb_q->setAutoScroll(true);
         tb_q->setProperty("showDropIndicator", QVariant(true));
+        tb_q->setSelectionMode(QAbstractItemView::SingleSelection);
         tb_q->setCornerButtonEnabled(false);
         tb_q->horizontalHeader()->setCascadingSectionResizes(true);
         tb_q->horizontalHeader()->setDefaultSectionSize(96);
@@ -1239,6 +1246,7 @@ public:
         tb_cos->setObjectName(QString::fromUtf8("tb_cos"));
         tb_cos->setGeometry(QRect(0, 0, 579, 325));
         tb_cos->setFont(font);
+        tb_cos->setSelectionMode(QAbstractItemView::SingleSelection);
         tb_cos->horizontalHeader()->setDefaultSectionSize(96);
         tb_cos->horizontalHeader()->setMinimumSectionSize(60);
         tb_cos->verticalHeader()->setVisible(false);
@@ -1342,6 +1350,7 @@ public:
         tb_f->setObjectName(QString::fromUtf8("tb_f"));
         tb_f->setGeometry(QRect(0, 0, 579, 235));
         tb_f->setFont(font);
+        tb_f->setSelectionMode(QAbstractItemView::SingleSelection);
         tb_f->horizontalHeader()->setDefaultSectionSize(96);
         tb_f->horizontalHeader()->setMinimumSectionSize(60);
         tb_f->verticalHeader()->setVisible(false);
@@ -1453,6 +1462,7 @@ public:
         tb_T->setObjectName(QString::fromUtf8("tb_T"));
         tb_T->setGeometry(QRect(0, 0, 579, 265));
         tb_T->setFont(font);
+        tb_T->setSelectionMode(QAbstractItemView::SingleSelection);
         tb_T->horizontalHeader()->setDefaultSectionSize(96);
         tb_T->horizontalHeader()->setMinimumSectionSize(60);
         tb_T->verticalHeader()->setVisible(false);
@@ -1656,6 +1666,7 @@ public:
         tb_t->setFont(font);
         tb_t->setAutoScroll(true);
         tb_t->setProperty("showDropIndicator", QVariant(true));
+        tb_t->setSelectionMode(QAbstractItemView::SingleSelection);
         tb_t->setCornerButtonEnabled(false);
         tb_t->horizontalHeader()->setCascadingSectionResizes(true);
         tb_t->horizontalHeader()->setDefaultSectionSize(96);
@@ -1763,7 +1774,7 @@ public:
 
         retranslateUi(rtu_telerror);
 
-        tabWidget->setCurrentIndex(9);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(rtu_telerror);

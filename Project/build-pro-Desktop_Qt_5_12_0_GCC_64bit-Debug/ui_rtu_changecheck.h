@@ -157,6 +157,7 @@ public:
         tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
         tableWidget->setGeometry(QRect(20, 60, 760, 160));
         tableWidget->setFont(font);
+        tableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
         tableWidget->horizontalHeader()->setDefaultSectionSize(88);
         tableWidget->verticalHeader()->setVisible(false);
         tableWidget->verticalHeader()->setHighlightSections(false);

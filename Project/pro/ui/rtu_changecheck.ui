@@ -134,6 +134,9 @@
      <pointsize>9</pointsize>
     </font>
    </property>
+   <property name="selectionMode">
+    <enum>QAbstractItemView::SingleSelection</enum>
+   </property>
    <attribute name="horizontalHeaderDefaultSectionSize">
     <number>88</number>
    </attribute>
