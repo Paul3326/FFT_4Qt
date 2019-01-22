@@ -35,7 +35,9 @@ SOURCES += \
         src/rtu_fieldcheck.cpp \
         src/rtu_telvarmonitor.cpp \
         src/rtu_excelmanger.cpp \
-        src/sys_para.cpp
+        src/sys_para.cpp \
+        src/sys_standardparasetting.cpp \
+        src/sys_protocsetting.cpp
 
 HEADERS += \
         inc/mainwindow.h \
@@ -47,7 +49,9 @@ HEADERS += \
         inc/rtu_fieldcheck.h \
         inc/rtu_telvarmonitor.h \
         inc/rtu_excelmanger.h \
-        inc/sys_para.h
+        inc/sys_para.h \
+        inc/sys_standardparasetting.h \
+        inc/sys_protocsetting.h
 
 FORMS += \
         ui/mainwindow.ui \
@@ -58,7 +62,9 @@ FORMS += \
         ui/rtu_fieldcheck.ui \
         ui/rtu_telvarmonitor.ui \
         ui/rtu_excelmanger.ui \
-        ui/sys_para.ui
+        ui/sys_para.ui \
+        ui/sys_standardparasetting.ui \
+        ui/sys_protocsetting.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

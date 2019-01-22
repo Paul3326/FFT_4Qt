@@ -8,6 +8,8 @@
 #include "inc/rtu_telvarmonitor.h"
 #include "inc/rtu_excelmanger.h"
 #include "inc/sys_para.h"
+#include "inc/sys_protocsetting.h"
+#include "inc/sys_standardparasetting.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -131,19 +133,26 @@ void MainWindow::SYS_ParaSetting()
     para_dialog.exec();
 }
 
+//通讯协议参数
 void MainWindow::SYS_ProtocSetting()
 {
-    qDebug()<<"SYS_ProtocSetting";
+    qDebug()<<"通讯协议参数";
+    sys_protocsetting para_dialog;
+    para_dialog.exec();
 }
 
+//自定义协议设置
 void MainWindow::SYS_UserProtocSetting()
 {
-    qDebug()<<"SYS_UserProtocSetting";
+    qDebug()<<"自定义协议设置";
 }
 
+//标准装置参数
 void MainWindow::SYS_StandardParaSetting()
 {
-    qDebug()<<"SYS_StandardParaSetting";
+    qDebug()<<"标准装置参数";
+    sys_standardparasetting para_dialog;
+    para_dialog.exec();
 }
 
 void MainWindow::SYS_ErrorCheckManager()

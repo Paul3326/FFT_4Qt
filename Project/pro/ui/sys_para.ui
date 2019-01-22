@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>640</width>
-    <height>480</height>
+    <height>430</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -39,7 +39,7 @@
     <string>功能试验项目:</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit">
+  <widget class="QTextEdit" name="textEdit_group">
    <property name="geometry">
     <rect>
      <x>120</x>
@@ -49,7 +49,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit_2">
+  <widget class="QTextEdit" name="textEdit_project">
    <property name="geometry">
     <rect>
      <x>120</x>
@@ -59,7 +59,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit_3">
+  <widget class="QTextEdit" name="textEdit_company">
    <property name="geometry">
     <rect>
      <x>490</x>
@@ -95,7 +95,7 @@
     <string>保护装置类型:</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox">
+  <widget class="QComboBox" name="comboBox_protectype">
    <property name="geometry">
     <rect>
      <x>120</x>
@@ -136,7 +136,7 @@
     <string>标准装置类型:</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox_2">
+  <widget class="QComboBox" name="comboBox_stdtype">
    <property name="geometry">
     <rect>
      <x>490</x>
@@ -177,7 +177,7 @@
     <string>交流电流采样校验选择:</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox_3">
+  <widget class="QComboBox" name="comboBox_current">
    <property name="geometry">
     <rect>
      <x>240</x>
@@ -213,7 +213,7 @@
     <string>交流功率源输出后，稳定时间(S):</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox_4">
+  <widget class="QComboBox" name="comboBox_statetime">
    <property name="geometry">
     <rect>
      <x>240</x>
@@ -341,7 +341,7 @@
     </property>
    </item>
   </widget>
-  <widget class="QComboBox" name="comboBox_5">
+  <widget class="QComboBox" name="comboBox_staytime">
    <property name="geometry">
     <rect>
      <x>240</x>
@@ -490,7 +490,7 @@
     <string>校验信息:</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox_6">
+  <widget class="QComboBox" name="comboBox_protocl">
    <property name="geometry">
     <rect>
      <x>490</x>
@@ -513,7 +513,7 @@
     </property>
    </item>
   </widget>
-  <widget class="QComboBox" name="comboBox_7">
+  <widget class="QComboBox" name="comboBox_point">
    <property name="geometry">
     <rect>
      <x>490</x>
@@ -662,7 +662,7 @@
     <string>允许误差:</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox_8">
+  <widget class="QComboBox" name="comboBox_precious">
    <property name="geometry">
     <rect>
      <x>490</x>
@@ -728,14 +728,168 @@
   <widget class="QPushButton" name="pushButton_quit">
    <property name="geometry">
     <rect>
-     <x>520</x>
-     <y>420</y>
+     <x>530</x>
+     <y>380</y>
      <width>89</width>
      <height>35</height>
     </rect>
    </property>
    <property name="text">
     <string>退出</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>320</y>
+     <width>151</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>发送请求指令</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_default">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>380</y>
+     <width>89</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>缺省值</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_save">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>380</y>
+     <width>89</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>保存</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_keystyle">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>380</y>
+     <width>89</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>按钮风格</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_stdpara">
+   <property name="geometry">
+    <rect>
+     <x>258</x>
+     <y>380</y>
+     <width>111</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>标准装置参数</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox_precious_2">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>320</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="maxVisibleItems">
+    <number>5</number>
+   </property>
+   <item>
+    <property name="text">
+     <string>0.001</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>0.002</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>0.005</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>0.01</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>0.02</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>0.05</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>0.1</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>0.2</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>0.5</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>1.0</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_12">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>327</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>允许误差:</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox_2">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>320</y>
+     <width>151</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>使用组合检定法</string>
    </property>
   </widget>
  </widget>
