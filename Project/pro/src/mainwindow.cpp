@@ -8,8 +8,12 @@
 #include "inc/rtu_telvarmonitor.h"
 #include "inc/rtu_excelmanger.h"
 #include "inc/sys_para.h"
+#include "inc/sys_timesync.h"
 #include "inc/sys_protocsetting.h"
+#include "inc/sys_userprotocsetting.h"
+#include "inc/sys_errorcheckmanager.h"
 #include "inc/sys_standardparasetting.h"
+#include "inc/sys_changecheckmanager.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -116,10 +120,10 @@ void MainWindow::RTU_TelVarMonitor()
     para_dialog.exec();
 }
 
-//Excel
+//Excel报表管理
 void MainWindow::RTU_ExcelManager()
 {
-    qDebug()<<"RTU_ExcelManager";
+    qDebug()<<"Excel报表管理";
     rtu_excelmanger para_dialog;
     para_dialog.exec();
 }
@@ -145,6 +149,8 @@ void MainWindow::SYS_ProtocSetting()
 void MainWindow::SYS_UserProtocSetting()
 {
     qDebug()<<"自定义协议设置";
+    sys_userprotocsetting para_dialog;
+    para_dialog.exec();
 }
 
 //标准装置参数
@@ -155,73 +161,96 @@ void MainWindow::SYS_StandardParaSetting()
     para_dialog.exec();
 }
 
+//检定方案设置
 void MainWindow::SYS_ErrorCheckManager()
 {
-    qDebug()<<"SYS_ErrorCheckManager";
+    qDebug()<<"检定方案设置";
+    sys_errorcheckmanager para_dialog;
+    para_dialog.exec();
 }
 
+//改变量检定方案管理
 void MainWindow::SYS_ChangeCheckManager()
 {
-    qDebug()<<"SYS_ChangeCheckManager";
+    qDebug()<<"改变量检定方案管理";
+    sys_changecheckmanager para_dialog;
+    para_dialog.exec();
 }
 
+//仪器的通信设置
 void MainWindow::SYS_MeaProtocSetting()
 {
-    qDebug()<<"SYS_MeaProtocSetting";
+    qDebug()<<"仪器的通信设置";
+    QMessageBox::information(nullptr, tr("提示"), tr("暂未实现！"),tr("确定"));
 }
 
+//时间同步
 void MainWindow::SYS_TimeSync()
 {
-    qDebug()<<"SYS_TimeSync";
+    qDebug()<<"时间同步";
+    sys_timesync para_dialog;
+    para_dialog.exec();
 }
 
+//交流标准功率源
 void MainWindow::SYS_ACSource()
 {
-    qDebug()<<"SYS_ACSource";
+    qDebug()<<"交流标准功率源";
 }
 
+//直流标准源
 void MainWindow::SYS_DCSource()
 {
-    qDebug()<<"SYS_DCSource";
+    qDebug()<<"直流标准源";
+    QMessageBox::information(nullptr, tr("提示"), tr("暂未实现！"),tr("确定"));
 }
 
+//交流测量
 void MainWindow::SYS_ACMesure()
 {
-    qDebug()<<"SYS_ACMesure";
+    qDebug()<<"交流测量";
 }
 
+//上下载仪器软件
 void MainWindow::SYS_Download()
 {
-    qDebug()<<"SYS_Download";
+    qDebug()<<"上下载仪器软件";
+     QMessageBox::information(nullptr, tr("提示"), tr("暂未实现！"),tr("确定"));
 }
 
+//网络升级软件
 void MainWindow::SYS_Update()
 {
-    qDebug()<<"SYS_Update";
+    qDebug()<<"网络升级软件";
 }
 
+//设置工具
 void MainWindow::SYS_Setting()
 {
-    qDebug()<<"SYS_Setting";
+    qDebug()<<"设置工具";
 }
 
+//设置记录保存路径
 void MainWindow::SYS_RecordSetting()
 {
-    qDebug()<<"SYS_RecordSetting";
+    qDebug()<<"设置记录保存路径";
 }
 
+//设置用户
 void MainWindow::SYS_UserSetting()
 {
-    qDebug()<<"SYS_UserSetting";
+    qDebug()<<"设置用户";
 }
 
+//交流源校准
 void MainWindow::SYS_AC_Calibration()
 {
-    qDebug()<<"SYS_AC_Calibration";
+    qDebug()<<"交流源校准";
 }
 
+//退出
 void MainWindow::SYS_Quit()
 {       
-    qDebug()<<"SYS_Quit";
+    qDebug()<<"退出";
     this->close();
 }

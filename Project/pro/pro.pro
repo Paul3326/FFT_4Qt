@@ -37,7 +37,11 @@ SOURCES += \
         src/rtu_excelmanger.cpp \
         src/sys_para.cpp \
         src/sys_standardparasetting.cpp \
-        src/sys_protocsetting.cpp
+        src/sys_protocsetting.cpp \
+        src/sys_userprotocsetting.cpp \
+        src/sys_errorcheckmanager.cpp \
+        src/sys_changecheckmanager.cpp \
+        src/sys_timesync.cpp
 
 HEADERS += \
         inc/mainwindow.h \
@@ -51,7 +55,11 @@ HEADERS += \
         inc/rtu_excelmanger.h \
         inc/sys_para.h \
         inc/sys_standardparasetting.h \
-        inc/sys_protocsetting.h
+        inc/sys_protocsetting.h \
+        inc/sys_userprotocsetting.h \
+        inc/sys_errorcheckmanager.h \
+        inc/sys_changecheckmanager.h \
+        inc/sys_timesync.h
 
 FORMS += \
         ui/mainwindow.ui \
@@ -64,7 +72,11 @@ FORMS += \
         ui/rtu_excelmanger.ui \
         ui/sys_para.ui \
         ui/sys_standardparasetting.ui \
-        ui/sys_protocsetting.ui
+        ui/sys_protocsetting.ui \
+        ui/sys_userprotocsetting.ui \
+        ui/sys_errorcheckmanager.ui \
+        ui/sys_changecheckmanager.ui \
+        ui/sys_timesync.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

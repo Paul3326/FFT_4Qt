@@ -111,7 +111,6 @@ QStringList rtu_para::rtu_para_read(uint8_t read_type,uint8_t read_pos)
 void rtu_para::on_pb_add_clicked()
 {
     para_flag ^= 0xfe;
-    qDebug()<<para_flag;
     if(para_flag&0xfe)
     {
         ui->pb_add->setText("取消");
@@ -139,7 +138,6 @@ void rtu_para::on_pb_add_clicked()
 void rtu_para::on_pb_save_clicked()
 {
     para_flag ^= 0xfe;
-    qDebug()<<para_flag;
     para_total_page++;
     para_current_page++;
     ui->te_record_page->setText(QString::number(para_total_page));
@@ -175,7 +173,6 @@ void rtu_para::on_pb_previous_clicked()
 
     ui->te_record_page->setText(QString::number(para_current_page));
     strl = rtu_para_read(1,para_current_page);
-    //rtu_show(strl);
 }
 
 void rtu_para::on_pb_next_clicked()
