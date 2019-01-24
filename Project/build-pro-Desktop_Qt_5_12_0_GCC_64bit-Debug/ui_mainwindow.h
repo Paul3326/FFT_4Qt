@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
@@ -61,6 +62,12 @@ public:
     QAction *action_2_17;
     QAction *action_2_18;
     QWidget *centralWidget;
+    QLabel *label;
+    QLabel *label_version;
+    QLabel *label_2;
+    QLabel *label_user;
+    QLabel *label_notice;
+    QLabel *label_3;
     QMenuBar *menuBar;
     QMenu *menuSYS;
     QMenu *menuRTU;
@@ -183,6 +190,24 @@ public:
         action_2_18->setFont(font);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
+        label = new QLabel(centralWidget);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(40, 510, 67, 17));
+        label_version = new QLabel(centralWidget);
+        label_version->setObjectName(QString::fromUtf8("label_version"));
+        label_version->setGeometry(QRect(120, 510, 111, 17));
+        label_2 = new QLabel(centralWidget);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setGeometry(QRect(260, 510, 67, 17));
+        label_user = new QLabel(centralWidget);
+        label_user->setObjectName(QString::fromUtf8("label_user"));
+        label_user->setGeometry(QRect(340, 510, 111, 17));
+        label_notice = new QLabel(centralWidget);
+        label_notice->setObjectName(QString::fromUtf8("label_notice"));
+        label_notice->setGeometry(QRect(540, 510, 111, 17));
+        label_3 = new QLabel(centralWidget);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setGeometry(QRect(490, 510, 67, 17));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
@@ -280,6 +305,12 @@ public:
         action_32->setText(QApplication::translate("MainWindow", "\344\272\244\346\265\201\346\272\220\346\240\241\345\207\206", nullptr));
         action_2_17->setText(QApplication::translate("MainWindow", "\344\272\244\346\265\201\346\272\220\346\240\241\345\207\206", nullptr));
         action_2_18->setText(QApplication::translate("MainWindow", "\351\200\200\345\207\272", nullptr));
+        label->setText(QApplication::translate("MainWindow", "\350\275\257\344\273\266\347\211\210\346\234\254:", nullptr));
+        label_version->setText(QString());
+        label_2->setText(QApplication::translate("MainWindow", "\347\231\273\345\275\225\347\224\250\346\210\267:", nullptr));
+        label_user->setText(QApplication::translate("MainWindow", "\350\266\205\347\272\247\347\224\250\346\210\267", nullptr));
+        label_notice->setText(QString());
+        label_3->setText(QApplication::translate("MainWindow", "\346\217\220\347\244\272:", nullptr));
         menuSYS->setTitle(QApplication::translate("MainWindow", "\347\263\273\347\273\237\350\256\276\347\275\256", nullptr));
         menuRTU->setTitle(QApplication::translate("MainWindow", "RTU\346\240\241\351\252\214", nullptr));
     } // retranslateUi

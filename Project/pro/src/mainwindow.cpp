@@ -8,6 +8,7 @@
 #include "inc/rtu_telvarmonitor.h"
 #include "inc/rtu_excelmanger.h"
 #include "inc/sys_para.h"
+#include "inc/uart_com.h"
 #include "inc/sys_timesync.h"
 #include "inc/sys_protocsetting.h"
 #include "inc/sys_userprotocsetting.h"
@@ -19,7 +20,15 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    version = tr("1.0.0.2");
+    user = tr("超级用户");
+    notice = tr("串口搜索中...");
+
     ui->setupUi(this);
+    ui->label_version->setText(version);
+    ui->label_user->setText(user);
+    ui->label_notice->setText(notice);
+
     connect(ui->action_1_1,SIGNAL(triggered()),this,SLOT(RTU_ParaSetting()));
     connect(ui->action_1_2,SIGNAL(triggered()),this,SLOT(RTU_FaceCheck()));
     connect(ui->action_1_3,SIGNAL(triggered()),this,SLOT(RTU_TelError()));
@@ -60,11 +69,14 @@ void MainWindow::RTU_ParaSetting()
 {
     qDebug()<<"RTU参数录入";
     rtu_para para_dialog;
-    //this->close();
     para_dialog.exec();
-
 }
 
+void MainWindow::UART()
+{
+    uart_com dialog;
+    dialog.exec();
+}
 //外观检查、耐压试验
 void MainWindow::RTU_FaceCheck()
 {

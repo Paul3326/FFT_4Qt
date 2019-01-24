@@ -48,9 +48,10 @@ public slots:
     void SYS_UserSetting();
     void SYS_AC_Calibration();
     void SYS_Quit();
-
+    void UART();
 private:
     Ui::MainWindow *ui;
+    QString version,user,notice;
 };
 
 #endif // MAINWINDOW_H

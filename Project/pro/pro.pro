@@ -5,7 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
-
+QT       += serialport
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = pro
@@ -41,7 +41,8 @@ SOURCES += \
         src/sys_userprotocsetting.cpp \
         src/sys_errorcheckmanager.cpp \
         src/sys_changecheckmanager.cpp \
-        src/sys_timesync.cpp
+        src/sys_timesync.cpp \
+        src/uart_com.cpp
 
 HEADERS += \
         inc/mainwindow.h \
@@ -59,7 +60,8 @@ HEADERS += \
         inc/sys_userprotocsetting.h \
         inc/sys_errorcheckmanager.h \
         inc/sys_changecheckmanager.h \
-        inc/sys_timesync.h
+        inc/sys_timesync.h \
+        inc/uart_com.h
 
 FORMS += \
         ui/mainwindow.ui \
@@ -76,7 +78,8 @@ FORMS += \
         ui/sys_userprotocsetting.ui \
         ui/sys_errorcheckmanager.ui \
         ui/sys_changecheckmanager.ui \
-        ui/sys_timesync.ui
+        ui/sys_timesync.ui \
+        ui/uart_com.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
