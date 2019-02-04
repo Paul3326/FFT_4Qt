@@ -49,7 +49,6 @@ public:
     QCheckBox *checkBox;
     QPushButton *pushButton_default;
     QPushButton *pushButton_save;
-    QPushButton *pushButton_keystyle;
     QPushButton *pushButton_stdpara;
     QComboBox *comboBox_precious_2;
     QLabel *label_12;
@@ -229,16 +228,13 @@ public:
         checkBox->setGeometry(QRect(20, 320, 151, 23));
         pushButton_default = new QPushButton(sys_para);
         pushButton_default->setObjectName(QString::fromUtf8("pushButton_default"));
-        pushButton_default->setGeometry(QRect(20, 380, 89, 35));
+        pushButton_default->setGeometry(QRect(120, 380, 89, 35));
         pushButton_save = new QPushButton(sys_para);
         pushButton_save->setObjectName(QString::fromUtf8("pushButton_save"));
-        pushButton_save->setGeometry(QRect(140, 380, 89, 35));
-        pushButton_keystyle = new QPushButton(sys_para);
-        pushButton_keystyle->setObjectName(QString::fromUtf8("pushButton_keystyle"));
-        pushButton_keystyle->setGeometry(QRect(400, 380, 89, 35));
+        pushButton_save->setGeometry(QRect(250, 380, 89, 35));
         pushButton_stdpara = new QPushButton(sys_para);
         pushButton_stdpara->setObjectName(QString::fromUtf8("pushButton_stdpara"));
-        pushButton_stdpara->setGeometry(QRect(258, 380, 111, 35));
+        pushButton_stdpara->setGeometry(QRect(380, 380, 111, 35));
         comboBox_precious_2 = new QComboBox(sys_para);
         comboBox_precious_2->addItem(QString());
         comboBox_precious_2->addItem(QString());
@@ -378,7 +374,6 @@ public:
         checkBox->setText(QApplication::translate("sys_para", "\345\217\221\351\200\201\350\257\267\346\261\202\346\214\207\344\273\244", nullptr));
         pushButton_default->setText(QApplication::translate("sys_para", "\347\274\272\347\234\201\345\200\274", nullptr));
         pushButton_save->setText(QApplication::translate("sys_para", "\344\277\235\345\255\230", nullptr));
-        pushButton_keystyle->setText(QApplication::translate("sys_para", "\346\214\211\351\222\256\351\243\216\346\240\274", nullptr));
         pushButton_stdpara->setText(QApplication::translate("sys_para", "\346\240\207\345\207\206\350\243\205\347\275\256\345\217\202\346\225\260", nullptr));
         comboBox_precious_2->setItemText(0, QApplication::translate("sys_para", "0.001", nullptr));
         comboBox_precious_2->setItemText(1, QApplication::translate("sys_para", "0.002", nullptr));

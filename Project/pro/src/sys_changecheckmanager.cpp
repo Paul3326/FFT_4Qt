@@ -8,6 +8,7 @@ sys_changecheckmanager::sys_changecheckmanager(QWidget *parent) :
     QString title = tr("改变量检定方案管理");
     ui->setupUi(this);
     this->setWindowTitle(title);
+    this->setFixedSize(this->width (),this->height ());
 }
 
 sys_changecheckmanager::~sys_changecheckmanager()

@@ -7,7 +7,9 @@ rtu_telvarmonitor::rtu_telvarmonitor(QWidget *parent) :
 {
     QString title = tr("遥测监视");
     ui->setupUi(this);
+    ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed);
     this->setWindowTitle(title);
+    this->setFixedSize(this->width (),this->height ());
 }
 
 rtu_telvarmonitor::~rtu_telvarmonitor()

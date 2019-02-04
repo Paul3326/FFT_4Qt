@@ -8,6 +8,7 @@ sys_errorcheckmanager::sys_errorcheckmanager(QWidget *parent) :
     QString title = tr("检定方案设置[") + QApplication::applicationDirPath() + tr("/scheme.dat]");;
     ui->setupUi(this);
     this->setWindowTitle(title);
+    this->setFixedSize(this->width (),this->height ());
 }
 
 sys_errorcheckmanager::~sys_errorcheckmanager()

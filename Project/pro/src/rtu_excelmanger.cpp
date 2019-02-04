@@ -8,6 +8,7 @@ rtu_excelmanger::rtu_excelmanger(QWidget *parent) :
     QString title = tr("附加RTU的Excel报表管理[工作路径:") + QApplication::applicationDirPath() + tr("]");
     ui->setupUi(this);
     this->setWindowTitle(title);
+    this->setFixedSize(this->width (),this->height ());
 }
 
 rtu_excelmanger::~rtu_excelmanger()

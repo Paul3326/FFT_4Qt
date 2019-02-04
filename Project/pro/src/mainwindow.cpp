@@ -15,26 +15,23 @@
 #include "inc/sys_errorcheckmanager.h"
 #include "inc/sys_standardparasetting.h"
 #include "inc/sys_changecheckmanager.h"
+#include "inc/about_verion.h"
+
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    version = tr("1.0.0.2");
-    user = tr("超级用户");
     notice = tr("串口搜索中...");
 
     ui->setupUi(this);
-    ui->label_version->setText(version);
-    ui->label_user->setText(user);
     ui->label_notice->setText(notice);
+    this->setFixedSize(this->width (),this->height ());
 
     connect(ui->action_1_1,SIGNAL(triggered()),this,SLOT(RTU_ParaSetting()));
     connect(ui->action_1_2,SIGNAL(triggered()),this,SLOT(RTU_FaceCheck()));
     connect(ui->action_1_3,SIGNAL(triggered()),this,SLOT(RTU_TelError()));
     connect(ui->action_1_4,SIGNAL(triggered()),this,SLOT(RTU_ChangeCheck()));
-    connect(ui->action_1_5,SIGNAL(triggered()),this,SLOT(RTU_TelPos()));
-    connect(ui->action_1_6,SIGNAL(triggered()),this,SLOT(RTU_Tel()));
     connect(ui->action_1_7,SIGNAL(triggered()),this,SLOT(RTU_FieldCheck()));
     connect(ui->action_1_8,SIGNAL(triggered()),this,SLOT(RTU_TelVarMonitor()));
     connect(ui->action_1_9,SIGNAL(triggered()),this,SLOT(RTU_ExcelManager()));
@@ -45,18 +42,16 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->action_2_4,SIGNAL(triggered()),this,SLOT(SYS_StandardParaSetting()));
     connect(ui->action_2_5,SIGNAL(triggered()),this,SLOT(SYS_ErrorCheckManager()));
     connect(ui->action_2_6,SIGNAL(triggered()),this,SLOT(SYS_ChangeCheckManager()));
-    connect(ui->action_2_7,SIGNAL(triggered()),this,SLOT(SYS_MeaProtocSetting()));
     connect(ui->action_2_8,SIGNAL(triggered()),this,SLOT(SYS_TimeSync()));
     connect(ui->action_2_9,SIGNAL(triggered()),this,SLOT(SYS_ACSource()));
-    connect(ui->action_2_10,SIGNAL(triggered()),this,SLOT(SYS_DCSource()));
     connect(ui->action_2_11,SIGNAL(triggered()),this,SLOT(SYS_ACMesure()));
-    connect(ui->action_2_12,SIGNAL(triggered()),this,SLOT(SYS_Download()));
-    connect(ui->action_2_13,SIGNAL(triggered()),this,SLOT(SYS_Update()));
     connect(ui->action_2_14,SIGNAL(triggered()),this,SLOT(SYS_Setting()));
     connect(ui->action_2_15,SIGNAL(triggered()),this,SLOT(SYS_RecordSetting()));
     connect(ui->action_2_16,SIGNAL(triggered()),this,SLOT(SYS_UserSetting()));
     connect(ui->action_2_17,SIGNAL(triggered()),this,SLOT(SYS_AC_Calibration()));
-    connect(ui->action_2_18,SIGNAL(triggered()),this,SLOT(SYS_Quit()));
+
+    connect(ui->action_3_11,SIGNAL(triggered()),this,SLOT(About_Version()));
+    //connect(ui->action_3_12,SIGNAL(triggered()),this,SLOT(About_User()));
 }
 
 MainWindow::~MainWindow()
@@ -100,20 +95,6 @@ void MainWindow::RTU_ChangeCheck()
     qDebug()<<"改变量";
     rtu_changecheck para_dialog;
     para_dialog.exec();
-}
-
-//遥信变位试验
-void MainWindow::RTU_TelPos()
-{
-    qDebug()<<"遥信变位试验";
-    QMessageBox::information(nullptr, tr("提示"), tr("暂未实现！"),tr("确定"));
-}
-
-//遥控试验
-void MainWindow::RTU_Tel()
-{
-    qDebug()<<"遥控试验";
-    QMessageBox::information(nullptr, tr("提示"), tr("暂未实现！"),tr("确定"));
 }
 
 //现场校验
@@ -189,13 +170,6 @@ void MainWindow::SYS_ChangeCheckManager()
     para_dialog.exec();
 }
 
-//仪器的通信设置
-void MainWindow::SYS_MeaProtocSetting()
-{
-    qDebug()<<"仪器的通信设置";
-    QMessageBox::information(nullptr, tr("提示"), tr("暂未实现！"),tr("确定"));
-}
-
 //时间同步
 void MainWindow::SYS_TimeSync()
 {
@@ -211,29 +185,16 @@ void MainWindow::SYS_ACSource()
 }
 
 //直流标准源
-void MainWindow::SYS_DCSource()
-{
-    qDebug()<<"直流标准源";
-    QMessageBox::information(nullptr, tr("提示"), tr("暂未实现！"),tr("确定"));
-}
+//void MainWindow::SYS_DCSource()
+//{
+//    qDebug()<<"直流标准源";
+//    QMessageBox::information(nullptr, tr("提示"), tr("暂未实现！"),tr("确定"));
+//}
 
 //交流测量
 void MainWindow::SYS_ACMesure()
 {
     qDebug()<<"交流测量";
-}
-
-//上下载仪器软件
-void MainWindow::SYS_Download()
-{
-    qDebug()<<"上下载仪器软件";
-     QMessageBox::information(nullptr, tr("提示"), tr("暂未实现！"),tr("确定"));
-}
-
-//网络升级软件
-void MainWindow::SYS_Update()
-{
-    qDebug()<<"网络升级软件";
 }
 
 //设置工具
@@ -260,9 +221,16 @@ void MainWindow::SYS_AC_Calibration()
     qDebug()<<"交流源校准";
 }
 
-//退出
-void MainWindow::SYS_Quit()
+//关于版本信息
+void MainWindow::About_Version()
 {       
-    qDebug()<<"退出";
-    this->close();
+    qDebug()<<"关于版本信息";
+    About_verion para_dialog;
+    para_dialog.exec();
+}
+
+//关于用户
+void MainWindow::About_User()
+{
+    qDebug()<<"关于用户";
 }

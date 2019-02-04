@@ -11,7 +11,7 @@ rtu_facecheck::rtu_facecheck(QWidget *parent) :
     title = tr("外观检查、交流耐压试验结果[RTU记录号:") + QString::number(rtu.para_current_page)+ tr("]");
     ui->setupUi(this);
     this->setWindowTitle(title);
-
+    this->setFixedSize(this->width (),this->height ());
     init_show();
 }
 

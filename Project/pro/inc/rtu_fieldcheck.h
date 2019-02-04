@@ -15,8 +15,9 @@ public:
     explicit rtu_fieldcheck(QWidget *parent = nullptr);
     ~rtu_fieldcheck();
 
+
 private slots:
-    void on_pb_print_2_clicked();
+    void on_pb_quit_clicked();
 
 private:
     Ui::rtu_fieldcheck *ui;

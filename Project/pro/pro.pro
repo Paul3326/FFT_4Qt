@@ -42,7 +42,8 @@ SOURCES += \
         src/sys_errorcheckmanager.cpp \
         src/sys_changecheckmanager.cpp \
         src/sys_timesync.cpp \
-        src/uart_com.cpp
+        src/uart_com.cpp \
+        src/about_verion.cpp
 
 HEADERS += \
         inc/mainwindow.h \
@@ -61,7 +62,8 @@ HEADERS += \
         inc/sys_errorcheckmanager.h \
         inc/sys_changecheckmanager.h \
         inc/sys_timesync.h \
-        inc/uart_com.h
+        inc/uart_com.h \
+        inc/about_verion.h
 
 FORMS += \
         ui/mainwindow.ui \
@@ -79,7 +81,8 @@ FORMS += \
         ui/sys_errorcheckmanager.ui \
         ui/sys_changecheckmanager.ui \
         ui/sys_timesync.ui \
-        ui/uart_com.ui
+        ui/uart_com.ui \
+        ui/about_verion.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

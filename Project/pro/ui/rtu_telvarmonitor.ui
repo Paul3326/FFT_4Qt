@@ -530,7 +530,7 @@
   <widget class="QPushButton" name="pb_clear">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>90</x>
      <y>430</y>
      <width>89</width>
      <height>35</height>
@@ -543,7 +543,7 @@
   <widget class="QPushButton" name="pb_quit">
    <property name="geometry">
     <rect>
-     <x>190</x>
+     <x>210</x>
      <y>430</y>
      <width>89</width>
      <height>35</height>

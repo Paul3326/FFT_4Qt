@@ -8,6 +8,7 @@ sys_para::sys_para(QWidget *parent) :
     QString title = tr("系统参数设置");
     ui->setupUi(this);
     this->setWindowTitle(title);
+    this->setFixedSize(this->width (),this->height ());
 }
 
 sys_para::~sys_para()

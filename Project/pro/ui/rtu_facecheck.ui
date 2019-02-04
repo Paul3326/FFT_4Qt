@@ -1386,7 +1386,7 @@
   <widget class="QPushButton" name="pb_previous">
    <property name="geometry">
     <rect>
-     <x>40</x>
+     <x>150</x>
      <y>580</y>
      <width>89</width>
      <height>35</height>
@@ -1399,7 +1399,7 @@
   <widget class="QPushButton" name="pb_next">
    <property name="geometry">
     <rect>
-     <x>170</x>
+     <x>280</x>
      <y>580</y>
      <width>89</width>
      <height>35</height>
@@ -1412,7 +1412,7 @@
   <widget class="QPushButton" name="pb_record">
    <property name="geometry">
     <rect>
-     <x>300</x>
+     <x>410</x>
      <y>580</y>
      <width>89</width>
      <height>35</height>
@@ -1425,7 +1425,7 @@
   <widget class="QPushButton" name="pb_save">
    <property name="geometry">
     <rect>
-     <x>490</x>
+     <x>540</x>
      <y>580</y>
      <width>89</width>
      <height>35</height>
@@ -1448,6 +1448,59 @@
     <string>退出</string>
    </property>
   </widget>
+  <widget class="QScrollArea" name="scrollArea">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>60</y>
+     <width>801</width>
+     <height>501</height>
+    </rect>
+   </property>
+   <property name="widgetResizable">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="scrollAreaWidgetContents_2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>799</width>
+      <height>499</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <zorder>scrollArea</zorder>
+  <zorder>te_rtu_station</zorder>
+  <zorder>label</zorder>
+  <zorder>label_2</zorder>
+  <zorder>te_rtu_position</zorder>
+  <zorder>tw_face</zorder>
+  <zorder>line</zorder>
+  <zorder>label_3</zorder>
+  <zorder>line_2</zorder>
+  <zorder>line_3</zorder>
+  <zorder>label_4</zorder>
+  <zorder>line_4</zorder>
+  <zorder>cb_face</zorder>
+  <zorder>label_6</zorder>
+  <zorder>tw_av</zorder>
+  <zorder>label_7</zorder>
+  <zorder>cb_av</zorder>
+  <zorder>line_7</zorder>
+  <zorder>label_8</zorder>
+  <zorder>line_8</zorder>
+  <zorder>tw_r</zorder>
+  <zorder>label_9</zorder>
+  <zorder>cb_r_2</zorder>
+  <zorder>label_10</zorder>
+  <zorder>te_result</zorder>
+  <zorder>pb_previous</zorder>
+  <zorder>pb_next</zorder>
+  <zorder>pb_record</zorder>
+  <zorder>pb_save</zorder>
+  <zorder>pb_quit</zorder>
  </widget>
  <resources/>
  <connections/>

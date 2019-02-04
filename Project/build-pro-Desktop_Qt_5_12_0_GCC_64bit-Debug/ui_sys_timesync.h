@@ -34,28 +34,28 @@ public:
     {
         if (sys_timesync->objectName().isEmpty())
             sys_timesync->setObjectName(QString::fromUtf8("sys_timesync"));
-        sys_timesync->resize(397, 203);
+        sys_timesync->resize(338, 176);
         label = new QLabel(sys_timesync);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(40, 30, 67, 17));
+        label->setGeometry(QRect(30, 30, 67, 17));
         label_2 = new QLabel(sys_timesync);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(40, 80, 67, 17));
+        label_2->setGeometry(QRect(30, 80, 67, 17));
         pushButton_read = new QPushButton(sys_timesync);
         pushButton_read->setObjectName(QString::fromUtf8("pushButton_read"));
-        pushButton_read->setGeometry(QRect(20, 140, 89, 30));
+        pushButton_read->setGeometry(QRect(30, 130, 89, 30));
         pushButton_write = new QPushButton(sys_timesync);
         pushButton_write->setObjectName(QString::fromUtf8("pushButton_write"));
-        pushButton_write->setGeometry(QRect(150, 140, 89, 30));
+        pushButton_write->setGeometry(QRect(140, 130, 81, 30));
         pushButton_quit = new QPushButton(sys_timesync);
         pushButton_quit->setObjectName(QString::fromUtf8("pushButton_quit"));
-        pushButton_quit->setGeometry(QRect(290, 140, 89, 30));
+        pushButton_quit->setGeometry(QRect(240, 130, 71, 30));
         textEdit_sys = new QTextEdit(sys_timesync);
         textEdit_sys->setObjectName(QString::fromUtf8("textEdit_sys"));
-        textEdit_sys->setGeometry(QRect(110, 25, 211, 31));
+        textEdit_sys->setGeometry(QRect(100, 25, 211, 31));
         lineEdit_input = new QLineEdit(sys_timesync);
         lineEdit_input->setObjectName(QString::fromUtf8("lineEdit_input"));
-        lineEdit_input->setGeometry(QRect(110, 70, 211, 31));
+        lineEdit_input->setGeometry(QRect(100, 70, 211, 31));
 
         retranslateUi(sys_timesync);
 

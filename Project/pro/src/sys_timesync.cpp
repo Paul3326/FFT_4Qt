@@ -8,6 +8,7 @@ sys_timesync::sys_timesync(QWidget *parent) :
     QString title = tr("时间同步(输入时,格式同上一行)");
     ui->setupUi(this);
     this->setWindowTitle(title);
+    this->setFixedSize(this->width (),this->height ());
 
     QTimer *timer=new QTimer(this);
     timer->start(100);

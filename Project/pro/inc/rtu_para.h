@@ -34,7 +34,6 @@ private slots:
 private:
     Ui::rtu_para *ui;
     uint8_t para_flag;     //cancel:0x01 save:0x02
-    QString rtu_para_csv;
     void rtu_para_init();
 
     void rtu_para_write();

@@ -754,7 +754,7 @@
   <widget class="QPushButton" name="pushButton_default">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>120</x>
      <y>380</y>
      <width>89</width>
      <height>35</height>
@@ -767,7 +767,7 @@
   <widget class="QPushButton" name="pushButton_save">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>250</x>
      <y>380</y>
      <width>89</width>
      <height>35</height>
@@ -777,23 +777,10 @@
     <string>保存</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_keystyle">
-   <property name="geometry">
-    <rect>
-     <x>400</x>
-     <y>380</y>
-     <width>89</width>
-     <height>35</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>按钮风格</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushButton_stdpara">
    <property name="geometry">
     <rect>
-     <x>258</x>
+     <x>380</x>
      <y>380</y>
      <width>111</width>
      <height>35</height>

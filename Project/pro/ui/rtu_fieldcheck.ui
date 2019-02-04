@@ -22,6 +22,12 @@
      <height>381</height>
     </rect>
    </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
    <property name="font">
     <font>
      <pointsize>9</pointsize>
@@ -159,11 +165,69 @@
      <set>NoItemFlags</set>
     </property>
    </item>
+   <item row="0" column="1">
+    <property name="textAlignment">
+     <set>AlignCenter</set>
+    </property>
+   </item>
+   <item row="0" column="2">
+    <property name="textAlignment">
+     <set>AlignCenter</set>
+    </property>
+   </item>
+   <item row="0" column="3">
+    <property name="text">
+     <string/>
+    </property>
+    <property name="textAlignment">
+     <set>AlignCenter</set>
+    </property>
+   </item>
+   <item row="0" column="4">
+    <property name="text">
+     <string/>
+    </property>
+    <property name="textAlignment">
+     <set>AlignCenter</set>
+    </property>
+   </item>
+   <item row="0" column="5">
+    <property name="text">
+     <string/>
+    </property>
+    <property name="textAlignment">
+     <set>AlignCenter</set>
+    </property>
+   </item>
+   <item row="0" column="6">
+    <property name="text">
+     <string/>
+    </property>
+    <property name="textAlignment">
+     <set>AlignCenter</set>
+    </property>
+   </item>
+   <item row="0" column="7">
+    <property name="text">
+     <string/>
+    </property>
+    <property name="textAlignment">
+     <set>AlignCenter</set>
+    </property>
+   </item>
+   <item row="0" column="8">
+    <property name="text">
+     <string/>
+    </property>
+    <property name="textAlignment">
+     <set>AlignCenter</set>
+    </property>
+   </item>
   </widget>
   <widget class="QPushButton" name="pb_read">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>270</x>
      <y>420</y>
      <width>89</width>
      <height>35</height>
@@ -176,7 +240,7 @@
   <widget class="QPushButton" name="pb_print">
    <property name="geometry">
     <rect>
-     <x>170</x>
+     <x>400</x>
      <y>420</y>
      <width>89</width>
      <height>35</height>
@@ -186,7 +250,7 @@
     <string>打印</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pb_print_2">
+  <widget class="QPushButton" name="pb_quit">
    <property name="geometry">
     <rect>
      <x>530</x>

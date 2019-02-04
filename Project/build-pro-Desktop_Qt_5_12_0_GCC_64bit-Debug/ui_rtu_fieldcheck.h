@@ -24,7 +24,7 @@ public:
     QTableWidget *tableWidget;
     QPushButton *pb_read;
     QPushButton *pb_print;
-    QPushButton *pb_print_2;
+    QPushButton *pb_quit;
 
     void setupUi(QDialog *rtu_fieldcheck)
     {
@@ -75,8 +75,37 @@ public:
         __qtablewidgetitem10->setForeground(brush);
         __qtablewidgetitem10->setFlags(Qt::NoItemFlags);
         tableWidget->setItem(0, 0, __qtablewidgetitem10);
+        QTableWidgetItem *__qtablewidgetitem11 = new QTableWidgetItem();
+        __qtablewidgetitem11->setTextAlignment(Qt::AlignCenter);
+        tableWidget->setItem(0, 1, __qtablewidgetitem11);
+        QTableWidgetItem *__qtablewidgetitem12 = new QTableWidgetItem();
+        __qtablewidgetitem12->setTextAlignment(Qt::AlignCenter);
+        tableWidget->setItem(0, 2, __qtablewidgetitem12);
+        QTableWidgetItem *__qtablewidgetitem13 = new QTableWidgetItem();
+        __qtablewidgetitem13->setTextAlignment(Qt::AlignCenter);
+        tableWidget->setItem(0, 3, __qtablewidgetitem13);
+        QTableWidgetItem *__qtablewidgetitem14 = new QTableWidgetItem();
+        __qtablewidgetitem14->setTextAlignment(Qt::AlignCenter);
+        tableWidget->setItem(0, 4, __qtablewidgetitem14);
+        QTableWidgetItem *__qtablewidgetitem15 = new QTableWidgetItem();
+        __qtablewidgetitem15->setTextAlignment(Qt::AlignCenter);
+        tableWidget->setItem(0, 5, __qtablewidgetitem15);
+        QTableWidgetItem *__qtablewidgetitem16 = new QTableWidgetItem();
+        __qtablewidgetitem16->setTextAlignment(Qt::AlignCenter);
+        tableWidget->setItem(0, 6, __qtablewidgetitem16);
+        QTableWidgetItem *__qtablewidgetitem17 = new QTableWidgetItem();
+        __qtablewidgetitem17->setTextAlignment(Qt::AlignCenter);
+        tableWidget->setItem(0, 7, __qtablewidgetitem17);
+        QTableWidgetItem *__qtablewidgetitem18 = new QTableWidgetItem();
+        __qtablewidgetitem18->setTextAlignment(Qt::AlignCenter);
+        tableWidget->setItem(0, 8, __qtablewidgetitem18);
         tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
         tableWidget->setGeometry(QRect(20, 20, 601, 381));
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(tableWidget->sizePolicy().hasHeightForWidth());
+        tableWidget->setSizePolicy(sizePolicy);
         tableWidget->setFont(font);
         tableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
         tableWidget->horizontalHeader()->setDefaultSectionSize(75);
@@ -84,13 +113,13 @@ public:
         tableWidget->verticalHeader()->setHighlightSections(false);
         pb_read = new QPushButton(rtu_fieldcheck);
         pb_read->setObjectName(QString::fromUtf8("pb_read"));
-        pb_read->setGeometry(QRect(20, 420, 89, 35));
+        pb_read->setGeometry(QRect(270, 420, 89, 35));
         pb_print = new QPushButton(rtu_fieldcheck);
         pb_print->setObjectName(QString::fromUtf8("pb_print"));
-        pb_print->setGeometry(QRect(170, 420, 89, 35));
-        pb_print_2 = new QPushButton(rtu_fieldcheck);
-        pb_print_2->setObjectName(QString::fromUtf8("pb_print_2"));
-        pb_print_2->setGeometry(QRect(530, 420, 89, 35));
+        pb_print->setGeometry(QRect(400, 420, 89, 35));
+        pb_quit = new QPushButton(rtu_fieldcheck);
+        pb_quit->setObjectName(QString::fromUtf8("pb_quit"));
+        pb_quit->setGeometry(QRect(530, 420, 89, 35));
 
         retranslateUi(rtu_fieldcheck);
 
@@ -129,7 +158,7 @@ public:
 
         pb_read->setText(QApplication::translate("rtu_fieldcheck", "\350\257\273\346\212\245\346\226\207", nullptr));
         pb_print->setText(QApplication::translate("rtu_fieldcheck", "\346\211\223\345\215\260", nullptr));
-        pb_print_2->setText(QApplication::translate("rtu_fieldcheck", "\351\200\200\345\207\272", nullptr));
+        pb_quit->setText(QApplication::translate("rtu_fieldcheck", "\351\200\200\345\207\272", nullptr));
     } // retranslateUi
 
 };

@@ -16,7 +16,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QStatusBar>
+#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -60,24 +60,34 @@ public:
     QAction *action_2_16;
     QAction *action_32;
     QAction *action_2_17;
-    QAction *action_2_18;
+    QAction *action;
+    QAction *action1_4;
+    QAction *action_2;
+    QAction *action_3_2_1;
+    QAction *action_3_11;
+    QAction *action_3;
+    QAction *action_4;
+    QAction *action_3_12;
     QWidget *centralWidget;
-    QLabel *label;
-    QLabel *label_version;
-    QLabel *label_2;
-    QLabel *label_user;
     QLabel *label_notice;
     QLabel *label_3;
+    QScrollArea *scrollArea;
+    QWidget *scrollAreaWidgetContents;
     QMenuBar *menuBar;
     QMenu *menuSYS;
     QMenu *menuRTU;
-    QStatusBar *statusBar;
+    QMenu *menuAbout;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(800, 600);
+        MainWindow->resize(800, 640);
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
+        MainWindow->setSizePolicy(sizePolicy);
         action1 = new QAction(MainWindow);
         action1->setObjectName(QString::fromUtf8("action1"));
         action2 = new QAction(MainWindow);
@@ -162,6 +172,7 @@ public:
         action_2_10 = new QAction(MainWindow);
         action_2_10->setObjectName(QString::fromUtf8("action_2_10"));
         action_2_10->setFont(font);
+        action_2_10->setVisible(false);
         action_2_11 = new QAction(MainWindow);
         action_2_11->setObjectName(QString::fromUtf8("action_2_11"));
         action_2_11->setFont(font);
@@ -185,29 +196,42 @@ public:
         action_2_17 = new QAction(MainWindow);
         action_2_17->setObjectName(QString::fromUtf8("action_2_17"));
         action_2_17->setFont(font);
-        action_2_18 = new QAction(MainWindow);
-        action_2_18->setObjectName(QString::fromUtf8("action_2_18"));
-        action_2_18->setFont(font);
+        action = new QAction(MainWindow);
+        action->setObjectName(QString::fromUtf8("action"));
+        action->setFont(font);
+        action->setVisible(false);
+        action1_4 = new QAction(MainWindow);
+        action1_4->setObjectName(QString::fromUtf8("action1_4"));
+        action_2 = new QAction(MainWindow);
+        action_2->setObjectName(QString::fromUtf8("action_2"));
+        action_3_2_1 = new QAction(MainWindow);
+        action_3_2_1->setObjectName(QString::fromUtf8("action_3_2_1"));
+        action_3_11 = new QAction(MainWindow);
+        action_3_11->setObjectName(QString::fromUtf8("action_3_11"));
+        action_3_11->setFont(font);
+        action_3 = new QAction(MainWindow);
+        action_3->setObjectName(QString::fromUtf8("action_3"));
+        action_4 = new QAction(MainWindow);
+        action_4->setObjectName(QString::fromUtf8("action_4"));
+        action_3_12 = new QAction(MainWindow);
+        action_3_12->setObjectName(QString::fromUtf8("action_3_12"));
+        action_3_12->setFont(font);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
-        label = new QLabel(centralWidget);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(40, 510, 67, 17));
-        label_version = new QLabel(centralWidget);
-        label_version->setObjectName(QString::fromUtf8("label_version"));
-        label_version->setGeometry(QRect(120, 510, 111, 17));
-        label_2 = new QLabel(centralWidget);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(260, 510, 67, 17));
-        label_user = new QLabel(centralWidget);
-        label_user->setObjectName(QString::fromUtf8("label_user"));
-        label_user->setGeometry(QRect(340, 510, 111, 17));
         label_notice = new QLabel(centralWidget);
         label_notice->setObjectName(QString::fromUtf8("label_notice"));
-        label_notice->setGeometry(QRect(540, 510, 111, 17));
+        label_notice->setGeometry(QRect(50, 590, 111, 17));
         label_3 = new QLabel(centralWidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(490, 510, 67, 17));
+        label_3->setGeometry(QRect(10, 590, 67, 17));
+        scrollArea = new QScrollArea(centralWidget);
+        scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
+        scrollArea->setGeometry(QRect(0, 0, 801, 581));
+        scrollArea->setWidgetResizable(true);
+        scrollAreaWidgetContents = new QWidget();
+        scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 799, 579));
+        scrollArea->setWidget(scrollAreaWidgetContents);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
@@ -216,13 +240,13 @@ public:
         menuSYS->setObjectName(QString::fromUtf8("menuSYS"));
         menuRTU = new QMenu(menuBar);
         menuRTU->setObjectName(QString::fromUtf8("menuRTU"));
+        menuAbout = new QMenu(menuBar);
+        menuAbout->setObjectName(QString::fromUtf8("menuAbout"));
         MainWindow->setMenuBar(menuBar);
-        statusBar = new QStatusBar(MainWindow);
-        statusBar->setObjectName(QString::fromUtf8("statusBar"));
-        MainWindow->setStatusBar(statusBar);
 
         menuBar->addAction(menuRTU->menuAction());
         menuBar->addAction(menuSYS->menuAction());
+        menuBar->addAction(menuAbout->menuAction());
         menuSYS->addAction(action_2_1);
         menuSYS->addAction(action_2_2);
         menuSYS->addAction(action_2_3);
@@ -237,28 +261,25 @@ public:
         menuSYS->addAction(action_2_10);
         menuSYS->addAction(action_2_11);
         menuSYS->addSeparator();
-        menuSYS->addAction(action_2_12);
-        menuSYS->addAction(action_2_13);
-        menuSYS->addSeparator();
         menuSYS->addAction(action_2_14);
         menuSYS->addAction(action_2_15);
         menuSYS->addAction(action_2_16);
         menuSYS->addSeparator();
         menuSYS->addAction(action_2_17);
-        menuSYS->addAction(action_2_18);
+        menuSYS->addAction(action);
         menuRTU->addAction(action_1_1);
         menuRTU->addSeparator();
         menuRTU->addAction(action_1_2);
         menuRTU->addAction(action_1_3);
         menuRTU->addAction(action_1_4);
         menuRTU->addSeparator();
-        menuRTU->addAction(action_1_5);
-        menuRTU->addAction(action_1_6);
-        menuRTU->addSeparator();
         menuRTU->addAction(action_1_7);
         menuRTU->addAction(action_1_8);
         menuRTU->addSeparator();
         menuRTU->addAction(action_1_9);
+        menuRTU->addSeparator();
+        menuAbout->addAction(action_3_11);
+        menuAbout->addAction(action_3_12);
 
         retranslateUi(MainWindow);
 
@@ -304,15 +325,19 @@ public:
         action_2_16->setText(QApplication::translate("MainWindow", "\350\256\276\347\275\256\347\224\250\346\210\267", nullptr));
         action_32->setText(QApplication::translate("MainWindow", "\344\272\244\346\265\201\346\272\220\346\240\241\345\207\206", nullptr));
         action_2_17->setText(QApplication::translate("MainWindow", "\344\272\244\346\265\201\346\272\220\346\240\241\345\207\206", nullptr));
-        action_2_18->setText(QApplication::translate("MainWindow", "\351\200\200\345\207\272", nullptr));
-        label->setText(QApplication::translate("MainWindow", "\350\275\257\344\273\266\347\211\210\346\234\254:", nullptr));
-        label_version->setText(QString());
-        label_2->setText(QApplication::translate("MainWindow", "\347\231\273\345\275\225\347\224\250\346\210\267:", nullptr));
-        label_user->setText(QApplication::translate("MainWindow", "\350\266\205\347\272\247\347\224\250\346\210\267", nullptr));
+        action->setText(QApplication::translate("MainWindow", "\351\200\200\345\207\272", nullptr));
+        action1_4->setText(QApplication::translate("MainWindow", "1", nullptr));
+        action_2->setText(QApplication::translate("MainWindow", "\350\266\205\347\272\247\347\224\250\346\210\267", nullptr));
+        action_3_2_1->setText(QApplication::translate("MainWindow", "\350\266\205\347\272\247\347\224\250\346\210\267", nullptr));
+        action_3_11->setText(QApplication::translate("MainWindow", "\347\211\210\346\234\254\344\277\241\346\201\257", nullptr));
+        action_3->setText(QApplication::translate("MainWindow", "\350\266\205\347\272\247\347\224\250\346\210\267", nullptr));
+        action_4->setText(QApplication::translate("MainWindow", "\344\270\200\350\210\254\347\224\250\346\210\267", nullptr));
+        action_3_12->setText(QApplication::translate("MainWindow", "\347\224\250\346\210\267\344\277\241\346\201\257", nullptr));
         label_notice->setText(QString());
         label_3->setText(QApplication::translate("MainWindow", "\346\217\220\347\244\272:", nullptr));
         menuSYS->setTitle(QApplication::translate("MainWindow", "\347\263\273\347\273\237\350\256\276\347\275\256", nullptr));
         menuRTU->setTitle(QApplication::translate("MainWindow", "RTU\346\240\241\351\252\214", nullptr));
+        menuAbout->setTitle(QApplication::translate("MainWindow", "\345\205\263\344\272\216\350\275\257\344\273\266", nullptr));
     } // retranslateUi
 
 };

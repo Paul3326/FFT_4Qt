@@ -9,6 +9,7 @@ uart_com::uart_com(QWidget *parent) :
 
     ui->setupUi(this);
     this->setWindowTitle(title);
+    this->setFixedSize(this->width (),this->height ());
     // 设置窗体最大化和最小化
     Qt::WindowFlags flags=Qt::Dialog;
     flags |=Qt::WindowMinMaxButtonsHint;

@@ -7,8 +7,9 @@ rtu_changecheck::rtu_changecheck(QWidget *parent) :
 {
     QString title = tr("影响量引起的改变量试验[第")+QString::number(1)+tr("条 RTU参数] 进行第")+QString::number(1)+tr("次检定");
     ui->setupUi(this);
+    ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed);
     this->setWindowTitle(title);
-
+    this->setFixedSize(this->width (),this->height ());
 }
 
 rtu_changecheck::~rtu_changecheck()

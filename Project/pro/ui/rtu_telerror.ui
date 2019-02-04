@@ -21,7 +21,7 @@
     <rect>
      <x>20</x>
      <y>0</y>
-     <width>881</width>
+     <width>891</width>
      <height>471</height>
     </rect>
    </property>
@@ -29,7 +29,7 @@
     <enum>Qt::DefaultContextMenu</enum>
    </property>
    <property name="styleSheet">
-    <string notr="true">QTabBar::tab{width:50}</string>
+    <string notr="true">QTabBar::tab{width:75}</string>
    </property>
    <property name="locale">
     <locale language="Chinese" country="China"/>
@@ -54,7 +54,7 @@
      </sizepolicy>
     </property>
     <attribute name="title">
-     <string>~U</string>
+     <string>U(交流)</string>
     </attribute>
     <widget class="QTableWidget" name="tb_av">
      <property name="geometry">
@@ -353,6 +353,41 @@
        <set>NoItemFlags</set>
       </property>
      </item>
+     <item row="0" column="1">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="0" column="2">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="0" column="3">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="0" column="5">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="0" column="6">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="0" column="7">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="0" column="8">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
      <item row="1" column="0">
       <property name="text">
        <string>2</string>
@@ -371,6 +406,41 @@
       </property>
       <property name="flags">
        <set>NoItemFlags</set>
+      </property>
+     </item>
+     <item row="1" column="1">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="1" column="2">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="1" column="3">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="1" column="5">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="1" column="6">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="1" column="7">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="1" column="8">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
       </property>
      </item>
      <item row="2" column="0">
@@ -393,6 +463,41 @@
        <set>NoItemFlags</set>
       </property>
      </item>
+     <item row="2" column="1">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="2" column="2">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="2" column="3">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="2" column="5">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="2" column="6">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="2" column="7">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="2" column="8">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
      <item row="3" column="0">
       <property name="text">
        <string>4</string>
@@ -411,6 +516,41 @@
       </property>
       <property name="flags">
        <set>NoItemFlags</set>
+      </property>
+     </item>
+     <item row="3" column="1">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="3" column="2">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="3" column="3">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="3" column="5">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="3" column="6">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="3" column="7">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="3" column="8">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
       </property>
      </item>
      <item row="4" column="0">
@@ -433,6 +573,41 @@
        <set>NoItemFlags</set>
       </property>
      </item>
+     <item row="4" column="1">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="4" column="2">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="4" column="3">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="4" column="5">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="4" column="6">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="4" column="7">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="4" column="8">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
      <item row="5" column="0">
       <property name="text">
        <string>6</string>
@@ -451,6 +626,44 @@
       </property>
       <property name="flags">
        <set>NoItemFlags</set>
+      </property>
+     </item>
+     <item row="5" column="1">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="5" column="2">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="5" column="3">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="5" column="5">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="5" column="6">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="5" column="7">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="5" column="8">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
       </property>
      </item>
      <item row="6" column="0">
@@ -473,6 +686,41 @@
        <set>NoItemFlags</set>
       </property>
      </item>
+     <item row="6" column="1">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="6" column="2">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="6" column="3">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="6" column="5">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="6" column="6">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="6" column="7">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="6" column="8">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
      <item row="7" column="0">
       <property name="text">
        <string>8</string>
@@ -491,6 +739,41 @@
       </property>
       <property name="flags">
        <set>NoItemFlags</set>
+      </property>
+     </item>
+     <item row="7" column="1">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="7" column="2">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="7" column="3">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="7" column="5">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="7" column="6">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="7" column="7">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="7" column="8">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
       </property>
      </item>
      <item row="8" column="0">
@@ -513,11 +796,46 @@
        <set>NoItemFlags</set>
       </property>
      </item>
+     <item row="8" column="1">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="8" column="2">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="8" column="3">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="8" column="5">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="8" column="6">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="8" column="7">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
+     <item row="8" column="8">
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+     </item>
     </widget>
    </widget>
    <widget class="QWidget" name="tab_2">
     <attribute name="title">
-     <string>~I</string>
+     <string>I(交流)</string>
     </attribute>
     <widget class="QTableWidget" name="tb_ac">
      <property name="geometry">
@@ -983,7 +1301,7 @@
    </widget>
    <widget class="QWidget" name="tab_3">
     <attribute name="title">
-     <string>-U</string>
+     <string>U(直流)</string>
     </attribute>
     <widget class="QTableWidget" name="tb_dv">
      <property name="geometry">
@@ -1395,7 +1713,7 @@
    </widget>
    <widget class="QWidget" name="tab_4">
     <attribute name="title">
-     <string>-I</string>
+     <string>I(直流)</string>
     </attribute>
     <widget class="QTableWidget" name="tb_dc">
      <property name="geometry">
@@ -6229,7 +6547,7 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>320</x>
      <y>660</y>
      <width>89</width>
      <height>35</height>
@@ -6242,7 +6560,7 @@
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>210</x>
+     <x>440</x>
      <y>660</y>
      <width>89</width>
      <height>35</height>
@@ -6255,7 +6573,7 @@
   <widget class="QPushButton" name="pushButton_3">
    <property name="geometry">
     <rect>
-     <x>420</x>
+     <x>560</x>
      <y>660</y>
      <width>89</width>
      <height>35</height>
@@ -6268,7 +6586,7 @@
   <widget class="QPushButton" name="pushButton_4">
    <property name="geometry">
     <rect>
-     <x>620</x>
+     <x>680</x>
      <y>660</y>
      <width>89</width>
      <height>35</height>

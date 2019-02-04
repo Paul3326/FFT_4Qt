@@ -7,70 +7,24 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>600</height>
+    <height>640</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>上层管理软件</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>510</y>
-      <width>67</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>软件版本:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_version">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>510</y>
-      <width>111</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>510</y>
-      <width>67</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>登录用户:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_user">
-    <property name="geometry">
-     <rect>
-      <x>340</x>
-      <y>510</y>
-      <width>111</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>超级用户</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_notice">
     <property name="geometry">
      <rect>
-      <x>540</x>
-      <y>510</y>
+      <x>50</x>
+      <y>590</y>
       <width>111</width>
       <height>17</height>
      </rect>
@@ -82,8 +36,8 @@
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>510</y>
+      <x>10</x>
+      <y>590</y>
       <width>67</width>
       <height>17</height>
      </rect>
@@ -91,6 +45,29 @@
     <property name="text">
      <string>提示:</string>
     </property>
+   </widget>
+   <widget class="QScrollArea" name="scrollArea">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>801</width>
+      <height>581</height>
+     </rect>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>799</width>
+       <height>579</height>
+      </rect>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -120,15 +97,12 @@
     <addaction name="action_2_10"/>
     <addaction name="action_2_11"/>
     <addaction name="separator"/>
-    <addaction name="action_2_12"/>
-    <addaction name="action_2_13"/>
-    <addaction name="separator"/>
     <addaction name="action_2_14"/>
     <addaction name="action_2_15"/>
     <addaction name="action_2_16"/>
     <addaction name="separator"/>
     <addaction name="action_2_17"/>
-    <addaction name="action_2_18"/>
+    <addaction name="action"/>
    </widget>
    <widget class="QMenu" name="menuRTU">
     <property name="title">
@@ -140,18 +114,23 @@
     <addaction name="action_1_3"/>
     <addaction name="action_1_4"/>
     <addaction name="separator"/>
-    <addaction name="action_1_5"/>
-    <addaction name="action_1_6"/>
-    <addaction name="separator"/>
     <addaction name="action_1_7"/>
     <addaction name="action_1_8"/>
     <addaction name="separator"/>
     <addaction name="action_1_9"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>关于软件</string>
+    </property>
+    <addaction name="action_3_11"/>
+    <addaction name="action_3_12"/>
    </widget>
    <addaction name="menuRTU"/>
    <addaction name="menuSYS"/>
+   <addaction name="menuAbout"/>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
   <action name="action1">
    <property name="text">
     <string>1</string>
@@ -407,6 +386,9 @@
      <pointsize>10</pointsize>
     </font>
    </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
   </action>
   <action name="action_2_11">
    <property name="text">
@@ -483,9 +465,57 @@
     </font>
    </property>
   </action>
-  <action name="action_2_18">
+  <action name="action">
    <property name="text">
     <string>退出</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="action1_4">
+   <property name="text">
+    <string>1</string>
+   </property>
+  </action>
+  <action name="action_2">
+   <property name="text">
+    <string>超级用户</string>
+   </property>
+  </action>
+  <action name="action_3_2_1">
+   <property name="text">
+    <string>超级用户</string>
+   </property>
+  </action>
+  <action name="action_3_11">
+   <property name="text">
+    <string>版本信息</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action_3">
+   <property name="text">
+    <string>超级用户</string>
+   </property>
+  </action>
+  <action name="action_4">
+   <property name="text">
+    <string>一般用户</string>
+   </property>
+  </action>
+  <action name="action_3_12">
+   <property name="text">
+    <string>用户信息</string>
    </property>
    <property name="font">
     <font>

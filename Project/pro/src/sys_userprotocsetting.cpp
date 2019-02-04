@@ -8,6 +8,8 @@ sys_userprotocsetting::sys_userprotocsetting(QWidget *parent) :
     QString title = tr("自定义协议---设置");
     ui->setupUi(this);
     this->setWindowTitle(title);
+    this->setFixedSize(this->width (),this->height ());
+
     QRegExp IP("\\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b");
     ui->lineEdit_ip->setValidator(new QRegExpValidator(IP,this));
 }

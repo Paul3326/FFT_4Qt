@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_rtu_fieldcheck_t {
     QByteArrayData data[3];
-    char stringdata0[38];
+    char stringdata0[35];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,12 +32,11 @@ struct qt_meta_stringdata_rtu_fieldcheck_t {
 static const qt_meta_stringdata_rtu_fieldcheck_t qt_meta_stringdata_rtu_fieldcheck = {
     {
 QT_MOC_LITERAL(0, 0, 14), // "rtu_fieldcheck"
-QT_MOC_LITERAL(1, 15, 21), // "on_pb_print_2_clicked"
-QT_MOC_LITERAL(2, 37, 0) // ""
+QT_MOC_LITERAL(1, 15, 18), // "on_pb_quit_clicked"
+QT_MOC_LITERAL(2, 34, 0) // ""
 
     },
-    "rtu_fieldcheck\0on_pb_print_2_clicked\0"
-    ""
+    "rtu_fieldcheck\0on_pb_quit_clicked\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -69,7 +68,7 @@ void rtu_fieldcheck::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         rtu_fieldcheck *_t = static_cast<rtu_fieldcheck *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->on_pb_print_2_clicked(); break;
+        case 0: _t->on_pb_quit_clicked(); break;
         default: ;
         }
     }

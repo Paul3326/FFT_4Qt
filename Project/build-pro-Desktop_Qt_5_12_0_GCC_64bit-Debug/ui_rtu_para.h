@@ -85,7 +85,14 @@ public:
         if (rtu_para->objectName().isEmpty())
             rtu_para->setObjectName(QString::fromUtf8("rtu_para"));
         rtu_para->resize(675, 600);
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(rtu_para->sizePolicy().hasHeightForWidth());
+        rtu_para->setSizePolicy(sizePolicy);
+        rtu_para->setCursor(QCursor(Qt::ArrowCursor));
         rtu_para->setWindowTitle(QString::fromUtf8("RTU\345\237\272\346\234\254\345\217\202\346\225\260\345\275\225\345\205\245"));
+        rtu_para->setLocale(QLocale(QLocale::Chinese, QLocale::China));
         cb_rtu_station = new QComboBox(rtu_para);
         cb_rtu_station->setObjectName(QString::fromUtf8("cb_rtu_station"));
         cb_rtu_station->setGeometry(QRect(120, 20, 171, 30));
@@ -395,23 +402,23 @@ public:
         te_CT_Ratio->setTabChangesFocus(true);
         pb_add = new QPushButton(rtu_para);
         pb_add->setObjectName(QString::fromUtf8("pb_add"));
-        pb_add->setGeometry(QRect(20, 550, 77, 31));
+        pb_add->setGeometry(QRect(20, 550, 61, 31));
         pb_add->setLocale(QLocale(QLocale::Chinese, QLocale::China));
         pb_save = new QPushButton(rtu_para);
         pb_save->setObjectName(QString::fromUtf8("pb_save"));
-        pb_save->setGeometry(QRect(101, 550, 77, 31));
+        pb_save->setGeometry(QRect(110, 550, 61, 31));
         pb_search = new QPushButton(rtu_para);
         pb_search->setObjectName(QString::fromUtf8("pb_search"));
-        pb_search->setGeometry(QRect(182, 550, 76, 31));
+        pb_search->setGeometry(QRect(200, 550, 61, 31));
         pb_delete = new QPushButton(rtu_para);
         pb_delete->setObjectName(QString::fromUtf8("pb_delete"));
-        pb_delete->setGeometry(QRect(262, 550, 77, 31));
+        pb_delete->setGeometry(QRect(290, 550, 61, 31));
         pb_previous = new QPushButton(rtu_para);
         pb_previous->setObjectName(QString::fromUtf8("pb_previous"));
-        pb_previous->setGeometry(QRect(343, 550, 77, 31));
+        pb_previous->setGeometry(QRect(380, 550, 61, 31));
         pb_next = new QPushButton(rtu_para);
         pb_next->setObjectName(QString::fromUtf8("pb_next"));
-        pb_next->setGeometry(QRect(424, 550, 76, 31));
+        pb_next->setGeometry(QRect(460, 550, 61, 31));
 
         retranslateUi(rtu_para);
 

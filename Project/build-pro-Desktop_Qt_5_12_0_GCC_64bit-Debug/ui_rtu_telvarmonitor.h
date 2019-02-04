@@ -240,10 +240,10 @@ public:
         tableWidget->verticalHeader()->setHighlightSections(false);
         pb_clear = new QPushButton(rtu_telvarmonitor);
         pb_clear->setObjectName(QString::fromUtf8("pb_clear"));
-        pb_clear->setGeometry(QRect(20, 430, 89, 35));
+        pb_clear->setGeometry(QRect(90, 430, 89, 35));
         pb_quit = new QPushButton(rtu_telvarmonitor);
         pb_quit->setObjectName(QString::fromUtf8("pb_quit"));
-        pb_quit->setGeometry(QRect(190, 430, 89, 35));
+        pb_quit->setGeometry(QRect(210, 430, 89, 35));
 
         retranslateUi(rtu_telvarmonitor);
 

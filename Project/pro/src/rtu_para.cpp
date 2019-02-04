@@ -9,13 +9,13 @@ rtu_para::rtu_para(QWidget *parent) :
     ui(new Ui::rtu_para)
 {
     file rtufile;
+    QString title = tr("RTU参数录入") + QApplication::applicationDirPath() + FILE_PATH;
     //get current file path
-    rtu_para_csv = tr("RTU参数录入") + QApplication::applicationDirPath() + FILE_PATH;
     rtufile.file_create(FILE_PATH);
 
     ui->setupUi(this);
-    this->setWindowTitle(rtu_para_csv);
-
+    this->setWindowTitle(title);
+    this->setFixedSize(this->width (),this->height ());
     //init para
     rtu_para_init();
 }

@@ -17,8 +17,10 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTextEdit>
+#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -54,6 +56,8 @@ public:
     QPushButton *pb_record;
     QPushButton *pb_save;
     QPushButton *pb_quit;
+    QScrollArea *scrollArea;
+    QWidget *scrollAreaWidgetContents_2;
 
     void setupUi(QDialog *rtu_facecheck)
     {
@@ -457,19 +461,57 @@ public:
         te_result->setPlaceholderText(QString::fromUtf8(""));
         pb_previous = new QPushButton(rtu_facecheck);
         pb_previous->setObjectName(QString::fromUtf8("pb_previous"));
-        pb_previous->setGeometry(QRect(40, 580, 89, 35));
+        pb_previous->setGeometry(QRect(150, 580, 89, 35));
         pb_next = new QPushButton(rtu_facecheck);
         pb_next->setObjectName(QString::fromUtf8("pb_next"));
-        pb_next->setGeometry(QRect(170, 580, 89, 35));
+        pb_next->setGeometry(QRect(280, 580, 89, 35));
         pb_record = new QPushButton(rtu_facecheck);
         pb_record->setObjectName(QString::fromUtf8("pb_record"));
-        pb_record->setGeometry(QRect(300, 580, 89, 35));
+        pb_record->setGeometry(QRect(410, 580, 89, 35));
         pb_save = new QPushButton(rtu_facecheck);
         pb_save->setObjectName(QString::fromUtf8("pb_save"));
-        pb_save->setGeometry(QRect(490, 580, 89, 35));
+        pb_save->setGeometry(QRect(540, 580, 89, 35));
         pb_quit = new QPushButton(rtu_facecheck);
         pb_quit->setObjectName(QString::fromUtf8("pb_quit"));
         pb_quit->setGeometry(QRect(670, 580, 89, 35));
+        scrollArea = new QScrollArea(rtu_facecheck);
+        scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
+        scrollArea->setGeometry(QRect(0, 60, 801, 501));
+        scrollArea->setWidgetResizable(true);
+        scrollAreaWidgetContents_2 = new QWidget();
+        scrollAreaWidgetContents_2->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_2"));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 799, 499));
+        scrollArea->setWidget(scrollAreaWidgetContents_2);
+        scrollArea->raise();
+        te_rtu_station->raise();
+        label->raise();
+        label_2->raise();
+        te_rtu_position->raise();
+        tw_face->raise();
+        line->raise();
+        label_3->raise();
+        line_2->raise();
+        line_3->raise();
+        label_4->raise();
+        line_4->raise();
+        cb_face->raise();
+        label_6->raise();
+        tw_av->raise();
+        label_7->raise();
+        cb_av->raise();
+        line_7->raise();
+        label_8->raise();
+        line_8->raise();
+        tw_r->raise();
+        label_9->raise();
+        cb_r_2->raise();
+        label_10->raise();
+        te_result->raise();
+        pb_previous->raise();
+        pb_next->raise();
+        pb_record->raise();
+        pb_save->raise();
+        pb_quit->raise();
 
         retranslateUi(rtu_facecheck);
 

@@ -8,6 +8,7 @@ sys_standardparasetting::sys_standardparasetting(QWidget *parent) :
     QString title = tr("标准装置参数");
     ui->setupUi(this);
     this->setWindowTitle(title);
+    this->setFixedSize(this->width (),this->height ());
 }
 
 sys_standardparasetting::~sys_standardparasetting()

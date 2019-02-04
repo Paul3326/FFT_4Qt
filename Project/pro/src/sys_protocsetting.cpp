@@ -8,6 +8,7 @@ sys_protocsetting::sys_protocsetting(QWidget *parent) :
     QString title = tr("通讯协议参数配置[文件路径:") + QApplication::applicationDirPath() + tr("rtu_para.csv]");
     ui->setupUi(this);
     this->setWindowTitle(title);
+    this->setFixedSize(this->width (),this->height ());
 }
 
 sys_protocsetting::~sys_protocsetting()

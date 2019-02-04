@@ -43,7 +43,7 @@ public:
     {
         if (sys_standardparasetting->objectName().isEmpty())
             sys_standardparasetting->setObjectName(QString::fromUtf8("sys_standardparasetting"));
-        sys_standardparasetting->resize(640, 502);
+        sys_standardparasetting->resize(571, 490);
         label = new QLabel(sys_standardparasetting);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(50, 20, 61, 16));
@@ -67,13 +67,13 @@ public:
         label_7->setGeometry(QRect(46, 376, 101, 17));
         pushButton_default = new QPushButton(sys_standardparasetting);
         pushButton_default->setObjectName(QString::fromUtf8("pushButton_default"));
-        pushButton_default->setGeometry(QRect(30, 440, 89, 35));
+        pushButton_default->setGeometry(QRect(210, 440, 89, 35));
         pushButton_save = new QPushButton(sys_standardparasetting);
         pushButton_save->setObjectName(QString::fromUtf8("pushButton_save"));
-        pushButton_save->setGeometry(QRect(340, 440, 89, 35));
+        pushButton_save->setGeometry(QRect(330, 440, 89, 35));
         pushButton_cancel = new QPushButton(sys_standardparasetting);
         pushButton_cancel->setObjectName(QString::fromUtf8("pushButton_cancel"));
-        pushButton_cancel->setGeometry(QRect(490, 440, 89, 35));
+        pushButton_cancel->setGeometry(QRect(450, 440, 89, 35));
         textEdit_productname = new QTextEdit(sys_standardparasetting);
         textEdit_productname->setObjectName(QString::fromUtf8("textEdit_productname"));
         textEdit_productname->setGeometry(QRect(130, 12, 411, 35));

@@ -77,7 +77,7 @@ public:
         checkBox_8->setGeometry(QRect(250, 210, 251, 23));
         pushButton_2 = new QPushButton(sys_changecheckmanager);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(240, 290, 89, 35));
+        pushButton_2->setGeometry(QRect(490, 290, 89, 35));
 
         retranslateUi(sys_changecheckmanager);
 
