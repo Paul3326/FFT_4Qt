@@ -22,12 +22,20 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    notice = tr("串口搜索中...");
+    QString pic_path = QApplication::applicationDirPath()+"/pic/desktop.jpg";
 
     ui->setupUi(this);
-    ui->label_notice->setText(notice);
-    this->setFixedSize(this->width (),this->height ());
 
+    //桌面背景图片
+    pic.load(pic_path);
+    pic = pic.scaled(ui->label_pic->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+    ui->label_pic->setPixmap(pic);
+    ui->label_pic->setAutoFillBackground(true);
+    ui->label_pic->resize(this->width(),this->height());
+    //状态栏信息
+    statusBar()->showMessage(tr("正在和设备通讯中..."));
+
+/*
     connect(ui->action_1_1,SIGNAL(triggered()),this,SLOT(RTU_ParaSetting()));
     connect(ui->action_1_2,SIGNAL(triggered()),this,SLOT(RTU_FaceCheck()));
     connect(ui->action_1_3,SIGNAL(triggered()),this,SLOT(RTU_TelError()));
@@ -52,11 +60,40 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(ui->action_3_11,SIGNAL(triggered()),this,SLOT(About_Version()));
     //connect(ui->action_3_12,SIGNAL(triggered()),this,SLOT(About_User()));
+    */
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::MainPage_Repaint()
+{
+    ui->label_pic->resize(this->width(),this->height());
+}
+//窗体最大最小化事件监听
+void MainWindow::changeEvent(QEvent *event)
+{
+    if(event->type()==QEvent::WindowStateChange)
+    {
+        QTimer::singleShot(0, this, SLOT(MainPage_Repaint()));
+    }
+}
+
+//窗体关闭事件监听
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    switch( QMessageBox::information(this,tr("提示"),tr("确定退出该软件?"),tr("确定"), tr("取消"),0,1))
+    {
+    case 0:
+        event->accept();
+        break;
+    case 1:
+    default:
+        event->ignore();
+        break;
+    }
 }
 
 //RTU参数录入

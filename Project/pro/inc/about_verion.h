@@ -15,9 +15,6 @@ public:
     explicit About_verion(QWidget *parent = nullptr);
     ~About_verion();
 
-private slots:
-    void on_pushButton_clicked();
-
 private:
     Ui::About_verion *ui;
 };

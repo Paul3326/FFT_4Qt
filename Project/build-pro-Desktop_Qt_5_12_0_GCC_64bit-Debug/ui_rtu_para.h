@@ -346,7 +346,7 @@ public:
         cb_checker2->setMaxVisibleItems(5);
         label_22 = new QLabel(rtu_para);
         label_22->setObjectName(QString::fromUtf8("label_22"));
-        label_22->setGeometry(QRect(290, 490, 121, 31));
+        label_22->setGeometry(QRect(290, 493, 121, 31));
         cb_variable_check = new QComboBox(rtu_para);
         cb_variable_check->addItem(QString());
         cb_variable_check->setObjectName(QString::fromUtf8("cb_variable_check"));
@@ -361,7 +361,7 @@ public:
         cb_error_check->setMaxVisibleItems(5);
         label_23 = new QLabel(rtu_para);
         label_23->setObjectName(QString::fromUtf8("label_23"));
-        label_23->setGeometry(QRect(20, 490, 100, 30));
+        label_23->setGeometry(QRect(20, 493, 100, 30));
         label_24 = new QLabel(rtu_para);
         label_24->setObjectName(QString::fromUtf8("label_24"));
         label_24->setGeometry(QRect(540, 490, 51, 31));

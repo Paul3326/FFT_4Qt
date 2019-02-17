@@ -166,11 +166,17 @@
     </property>
    </item>
    <item row="0" column="1">
+    <property name="text">
+     <string/>
+    </property>
     <property name="textAlignment">
      <set>AlignCenter</set>
     </property>
    </item>
    <item row="0" column="2">
+    <property name="text">
+     <string/>
+    </property>
     <property name="textAlignment">
      <set>AlignCenter</set>
     </property>
