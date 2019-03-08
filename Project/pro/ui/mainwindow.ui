@@ -2,6 +2,12 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -35,6 +41,9 @@
       <verstretch>0</verstretch>
      </sizepolicy>
     </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -42,7 +51,7 @@
      <bool>true</bool>
     </property>
     <property name="alignment">
-     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+     <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
     </property>
    </widget>
   </widget>
@@ -59,67 +68,65 @@
     <property name="title">
      <string>系统设置</string>
     </property>
-    <addaction name="action_12_1"/>
-    <addaction name="action_12_2"/>
-    <addaction name="action_12_3"/>
-    <addaction name="action_12_4"/>
+    <addaction name="action_6_1"/>
+    <addaction name="action_6_2"/>
+    <addaction name="action_6_3"/>
+    <addaction name="action_6_4"/>
     <addaction name="separator"/>
-    <addaction name="action_12_7"/>
-    <addaction name="action_12_8"/>
-    <addaction name="action_12_9"/>
-    <addaction name="action_12_10"/>
-    <addaction name="action_12_11"/>
+    <addaction name="action_6_5"/>
+    <addaction name="action_6_6"/>
+    <addaction name="action_6_7"/>
+    <addaction name="action_6_8"/>
+    <addaction name="action_6_9"/>
     <addaction name="separator"/>
-    <addaction name="action_12_14"/>
-    <addaction name="action_12_15"/>
-    <addaction name="action_12_16"/>
+    <addaction name="action_6_10"/>
     <addaction name="separator"/>
-    <addaction name="action_12_17"/>
-    <addaction name="action_12_18"/>
+    <addaction name="action_6_11"/>
+    <addaction name="action_6_12"/>
    </widget>
    <widget class="QMenu" name="menuRTU">
     <property name="title">
      <string>检测项目</string>
     </property>
+    <addaction name="action_4_1"/>
+    <addaction name="action_4_2"/>
+    <addaction name="action_4_3"/>
     <addaction name="separator"/>
-    <addaction name="action_11_2"/>
-    <addaction name="action_11_3"/>
-    <addaction name="action_11_4"/>
-    <addaction name="separator"/>
-    <addaction name="action_11_7"/>
-    <addaction name="action_11_8"/>
-    <addaction name="separator"/>
-    <addaction name="action_11_9"/>
-    <addaction name="separator"/>
+    <addaction name="action_4_4"/>
+    <addaction name="action_4_5"/>
    </widget>
    <widget class="QMenu" name="menuAbout">
     <property name="title">
      <string>关于软件</string>
     </property>
-    <addaction name="action_13_1"/>
+    <addaction name="action_7_1"/>
    </widget>
    <widget class="QMenu" name="menu_Connect">
     <property name="title">
      <string>联机通讯</string>
     </property>
+    <addaction name="action_1_2"/>
+    <addaction name="action_1_3"/>
    </widget>
    <widget class="QMenu" name="menu">
     <property name="title">
      <string>参数录入</string>
     </property>
-    <addaction name="action_2_2"/>
+    <addaction name="action_2_1"/>
    </widget>
    <widget class="QMenu" name="menu_2">
     <property name="title">
      <string>方案管理</string>
     </property>
     <addaction name="action_3_1"/>
-    <addaction name="action_3_3"/>
+    <addaction name="action_3_2"/>
    </widget>
    <widget class="QMenu" name="menu_3">
     <property name="title">
      <string>文件管理</string>
     </property>
+    <addaction name="action_5_1"/>
+    <addaction name="action_5_2"/>
    </widget>
    <addaction name="menu_Connect"/>
    <addaction name="menu"/>
@@ -129,7 +136,11 @@
    <addaction name="menuSYS"/>
    <addaction name="menuAbout"/>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="layoutDirection">
+    <enum>Qt::RightToLeft</enum>
+   </property>
+  </widget>
   <action name="action1">
    <property name="text">
     <string>1</string>
@@ -201,7 +212,7 @@
     </font>
    </property>
   </action>
-  <action name="action_11_2">
+  <action name="action_4_1">
    <property name="text">
     <string>外观检查、耐压试验结果</string>
    </property>
@@ -211,7 +222,7 @@
     </font>
    </property>
   </action>
-  <action name="action_11_3">
+  <action name="action_4_2">
    <property name="text">
     <string>遥测误差检验</string>
    </property>
@@ -221,7 +232,7 @@
     </font>
    </property>
   </action>
-  <action name="action_11_4">
+  <action name="action_4_3">
    <property name="text">
     <string>改变量</string>
    </property>
@@ -251,7 +262,7 @@
     </font>
    </property>
   </action>
-  <action name="action_11_7">
+  <action name="action_4_4">
    <property name="text">
     <string>现场校验</string>
    </property>
@@ -261,7 +272,7 @@
     </font>
    </property>
   </action>
-  <action name="action_11_8">
+  <action name="action_4_5">
    <property name="text">
     <string>遥控量监测</string>
    </property>
@@ -281,7 +292,7 @@
     </font>
    </property>
   </action>
-  <action name="action_12_1">
+  <action name="action_6_1">
    <property name="text">
     <string>系统参数设置</string>
    </property>
@@ -291,7 +302,7 @@
     </font>
    </property>
   </action>
-  <action name="action_12_2">
+  <action name="action_6_2">
    <property name="text">
     <string>通讯协议参数</string>
    </property>
@@ -301,7 +312,7 @@
     </font>
    </property>
   </action>
-  <action name="action_12_3">
+  <action name="action_6_3">
    <property name="text">
     <string>自定义协议设置</string>
    </property>
@@ -311,7 +322,7 @@
     </font>
    </property>
   </action>
-  <action name="action_12_4">
+  <action name="action_6_4">
    <property name="text">
     <string>设置标准装置参数</string>
    </property>
@@ -346,7 +357,7 @@
     </font>
    </property>
   </action>
-  <action name="action_12_7">
+  <action name="action_6_5">
    <property name="text">
     <string>仪器的通信设置</string>
    </property>
@@ -356,7 +367,7 @@
     </font>
    </property>
   </action>
-  <action name="action_12_8">
+  <action name="action_6_6">
    <property name="text">
     <string>时钟同步</string>
    </property>
@@ -366,7 +377,7 @@
     </font>
    </property>
   </action>
-  <action name="action_12_9">
+  <action name="action_6_7">
    <property name="text">
     <string>交流标准功率源(P)</string>
    </property>
@@ -376,7 +387,7 @@
     </font>
    </property>
   </action>
-  <action name="action_12_10">
+  <action name="action_6_8">
    <property name="text">
     <string>直流标准源</string>
    </property>
@@ -389,7 +400,7 @@
     <bool>false</bool>
    </property>
   </action>
-  <action name="action_12_11">
+  <action name="action_6_9">
    <property name="text">
     <string>交流测量</string>
    </property>
@@ -419,7 +430,7 @@
     </font>
    </property>
   </action>
-  <action name="action_12_14">
+  <action name="action_6_10">
    <property name="text">
     <string>设置工具</string>
    </property>
@@ -454,7 +465,7 @@
     <string>交流源校准</string>
    </property>
   </action>
-  <action name="action_12_17">
+  <action name="action_6_11">
    <property name="text">
     <string>交流源校准</string>
    </property>
@@ -464,7 +475,7 @@
     </font>
    </property>
   </action>
-  <action name="action_12_18">
+  <action name="action_6_12">
    <property name="checked">
     <bool>false</bool>
    </property>
@@ -498,7 +509,7 @@
     <string>超级用户</string>
    </property>
   </action>
-  <action name="action_13_1">
+  <action name="action_7_1">
    <property name="text">
     <string>版本信息</string>
    </property>
@@ -528,7 +539,7 @@
     </font>
    </property>
   </action>
-  <action name="action_2_2">
+  <action name="action_2_1">
    <property name="text">
     <string>RTU参数录入</string>
    </property>
@@ -540,7 +551,7 @@
   </action>
   <action name="action_3_1">
    <property name="text">
-    <string>误差检定方案管理</string>
+    <string>误差方案</string>
    </property>
    <property name="font">
     <font>
@@ -548,9 +559,49 @@
     </font>
    </property>
   </action>
-  <action name="action_3_3">
+  <action name="action_3_2">
    <property name="text">
-    <string>改变量检定方案管理</string>
+    <string>改变量方案</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action_1_3">
+   <property name="text">
+    <string>设备联机</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action_1_2">
+   <property name="text">
+    <string>参数设置</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action_5_1">
+   <property name="text">
+    <string>报表输出</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action_5_2">
+   <property name="text">
+    <string>保存路径</string>
    </property>
    <property name="font">
     <font>

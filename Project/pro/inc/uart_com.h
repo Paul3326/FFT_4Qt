@@ -2,6 +2,11 @@
 #define UART_COM_H
 
 #include <QDialog>
+#include <QTimer>
+#include <QDebug>
+
+#include <QtSerialPort/QSerialPort>
+#include <QtSerialPort/QSerialPortInfo>
 
 namespace Ui {
 class uart_com;
@@ -15,6 +20,8 @@ public:
     explicit uart_com(QWidget *parent = nullptr);
     ~uart_com();
 
+public slots:
+    void ComCom_Search();
 private:
     Ui::uart_com *ui;
 };

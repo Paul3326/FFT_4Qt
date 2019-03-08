@@ -18,16 +18,10 @@ public:
     ~rtu_facecheck();
 
 private slots:
-
-    void on_tw_r_cellChanged(int row, int column);
-
     void on_pb_quit_clicked();
 
 private:
     Ui::rtu_facecheck *ui;
-    QString UOver60,ULower60;
-
-    void init_show();
 };
 
 #endif // RTU_FACECHECK_H

@@ -6,6 +6,8 @@
 
 QT       += core gui
 QT       += serialport
+QT       += xml
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = pro
@@ -26,7 +28,6 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        src/file.cpp \
         src/mainwindow.cpp \
         src/rtu_para.cpp \
         src/rtu_facecheck.cpp \
@@ -43,12 +44,13 @@ SOURCES += \
         src/sys_changecheckmanager.cpp \
         src/sys_timesync.cpp \
         src/uart_com.cpp \
-        src/about_verion.cpp
+        src/about_verion.cpp \
+        src/xml_record.cpp
 
 HEADERS += \
+        inc/global.h \
         inc/mainwindow.h \
         inc/rtu_para.h \
-        inc/file.h \
         inc/rtu_facecheck.h \
         inc/rtu_telerror.h \
         inc/rtu_changecheck.h \
@@ -63,7 +65,9 @@ HEADERS += \
         inc/sys_changecheckmanager.h \
         inc/sys_timesync.h \
         inc/uart_com.h \
-        inc/about_verion.h
+        inc/about_verion.h \
+        inc/global.h \
+        inc/xml_record.h
 
 FORMS += \
         ui/mainwindow.ui \

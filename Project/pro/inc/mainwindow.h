@@ -20,12 +20,21 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    QString localTime;
+
+    void Update_CommStatus(QString status);
+    void Update_Time();
 
 public slots:
     void MainPage_Repaint();
+    void ComCom_Check();
 
-
+    void Com_Connect();
+    void Com_Setting();
     void RTU_ParaSetting();
+
+
+
     void RTU_FaceCheck();
     void RTU_TelError();
     void RTU_ChangeCheck();
@@ -48,9 +57,6 @@ public slots:
     void SYS_AC_Calibration();
 
     void About_Version();
-    void About_User();
-
-    void UART();
 
 private:
     Ui::MainWindow *ui;

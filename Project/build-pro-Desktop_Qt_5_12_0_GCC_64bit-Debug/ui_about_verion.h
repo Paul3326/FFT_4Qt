@@ -26,6 +26,7 @@ public:
     {
         if (About_verion->objectName().isEmpty())
             About_verion->setObjectName(QString::fromUtf8("About_verion"));
+        About_verion->setWindowModality(Qt::ApplicationModal);
         About_verion->resize(270, 131);
         label_name = new QLabel(About_verion);
         label_name->setObjectName(QString::fromUtf8("label_name"));

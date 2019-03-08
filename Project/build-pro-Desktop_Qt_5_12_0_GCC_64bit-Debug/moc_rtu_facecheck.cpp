@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_rtu_facecheck_t {
-    QByteArrayData data[6];
-    char stringdata0[65];
+    QByteArrayData data[3];
+    char stringdata0[34];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,15 +32,11 @@ struct qt_meta_stringdata_rtu_facecheck_t {
 static const qt_meta_stringdata_rtu_facecheck_t qt_meta_stringdata_rtu_facecheck = {
     {
 QT_MOC_LITERAL(0, 0, 13), // "rtu_facecheck"
-QT_MOC_LITERAL(1, 14, 19), // "on_tw_r_cellChanged"
-QT_MOC_LITERAL(2, 34, 0), // ""
-QT_MOC_LITERAL(3, 35, 3), // "row"
-QT_MOC_LITERAL(4, 39, 6), // "column"
-QT_MOC_LITERAL(5, 46, 18) // "on_pb_quit_clicked"
+QT_MOC_LITERAL(1, 14, 18), // "on_pb_quit_clicked"
+QT_MOC_LITERAL(2, 33, 0) // ""
 
     },
-    "rtu_facecheck\0on_tw_r_cellChanged\0\0"
-    "row\0column\0on_pb_quit_clicked"
+    "rtu_facecheck\0on_pb_quit_clicked\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -50,7 +46,7 @@ static const uint qt_meta_data_rtu_facecheck[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       1,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -58,11 +54,9 @@ static const uint qt_meta_data_rtu_facecheck[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    2,   24,    2, 0x08 /* Private */,
-       5,    0,   29,    2, 0x08 /* Private */,
+       1,    0,   19,    2, 0x08 /* Private */,
 
  // slots: parameters
-    QMetaType::Void, QMetaType::Int, QMetaType::Int,    3,    4,
     QMetaType::Void,
 
        0        // eod
@@ -74,11 +68,11 @@ void rtu_facecheck::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         rtu_facecheck *_t = static_cast<rtu_facecheck *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->on_tw_r_cellChanged((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 1: _t->on_pb_quit_clicked(); break;
+        case 0: _t->on_pb_quit_clicked(); break;
         default: ;
         }
     }
+    Q_UNUSED(_a);
 }
 
 QT_INIT_METAOBJECT const QMetaObject rtu_facecheck::staticMetaObject = { {
@@ -110,13 +104,13 @@ int rtu_facecheck::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 1)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 1;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 1)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 2;
+        _id -= 1;
     }
     return _id;
 }

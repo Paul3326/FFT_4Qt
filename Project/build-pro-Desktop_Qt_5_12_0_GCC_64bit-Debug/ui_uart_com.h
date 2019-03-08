@@ -11,13 +11,17 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QTextEdit>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_uart_com
 {
 public:
+    QComboBox *comboBox;
+    QTextEdit *textEdit;
 
     void setupUi(QDialog *uart_com)
     {
@@ -26,6 +30,12 @@ public:
         uart_com->setWindowModality(Qt::NonModal);
         uart_com->setEnabled(false);
         uart_com->resize(640, 480);
+        comboBox = new QComboBox(uart_com);
+        comboBox->setObjectName(QString::fromUtf8("comboBox"));
+        comboBox->setGeometry(QRect(120, 90, 181, 25));
+        textEdit = new QTextEdit(uart_com);
+        textEdit->setObjectName(QString::fromUtf8("textEdit"));
+        textEdit->setGeometry(QRect(370, 90, 221, 361));
 
         retranslateUi(uart_com);
 

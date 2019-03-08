@@ -16,12 +16,15 @@
 #include "inc/sys_standardparasetting.h"
 #include "inc/sys_changecheckmanager.h"
 #include "inc/about_verion.h"
+#include "inc/uart_com.h"
 
+#include "inc/global.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    QTimer *timer = new QTimer(this);
     QString pic_path = QApplication::applicationDirPath()+"/pic/desktop.jpg";
 
     ui->setupUi(this);
@@ -32,42 +35,51 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->label_pic->setPixmap(pic);
     ui->label_pic->setAutoFillBackground(true);
     ui->label_pic->resize(this->width(),this->height());
-    //状态栏信息
-    statusBar()->showMessage(tr("正在和设备通讯中..."));
+
+    //每隔100ms进行一次端口检查
+    connect(timer, SIGNAL(timeout()), this, SLOT(ComCom_Check()));
+    timer->start(200);
+
+    connect(ui->action_1_2,SIGNAL(triggered()),this,SLOT(Com_Setting()));
+    connect(ui->action_1_3,SIGNAL(triggered()),this,SLOT(Com_Connect()));
+
+    connect(ui->action_2_1,SIGNAL(triggered()),this,SLOT(RTU_ParaSetting()));
 
 /*
-    connect(ui->action_1_1,SIGNAL(triggered()),this,SLOT(RTU_ParaSetting()));
-    connect(ui->action_1_2,SIGNAL(triggered()),this,SLOT(RTU_FaceCheck()));
-    connect(ui->action_1_3,SIGNAL(triggered()),this,SLOT(RTU_TelError()));
-    connect(ui->action_1_4,SIGNAL(triggered()),this,SLOT(RTU_ChangeCheck()));
-    connect(ui->action_1_7,SIGNAL(triggered()),this,SLOT(RTU_FieldCheck()));
-    connect(ui->action_1_8,SIGNAL(triggered()),this,SLOT(RTU_TelVarMonitor()));
-    connect(ui->action_1_9,SIGNAL(triggered()),this,SLOT(RTU_ExcelManager()));
+    connect(ui->action_3_1,SIGNAL(triggered()),this,SLOT(RTU_FieldCheck()));
+    connect(ui->action_3_2,SIGNAL(triggered()),this,SLOT(RTU_TelVarMonitor()));
 
-    connect(ui->action_2_1,SIGNAL(triggered()),this,SLOT(SYS_ParaSetting()));
-    connect(ui->action_2_2,SIGNAL(triggered()),this,SLOT(SYS_ProtocSetting()));
-    connect(ui->action_2_3,SIGNAL(triggered()),this,SLOT(SYS_UserProtocSetting()));
-    connect(ui->action_2_4,SIGNAL(triggered()),this,SLOT(SYS_StandardParaSetting()));
-    connect(ui->action_2_5,SIGNAL(triggered()),this,SLOT(SYS_ErrorCheckManager()));
-    connect(ui->action_2_6,SIGNAL(triggered()),this,SLOT(SYS_ChangeCheckManager()));
-    connect(ui->action_2_8,SIGNAL(triggered()),this,SLOT(SYS_TimeSync()));
-    connect(ui->action_2_9,SIGNAL(triggered()),this,SLOT(SYS_ACSource()));
-    connect(ui->action_2_11,SIGNAL(triggered()),this,SLOT(SYS_ACMesure()));
-    connect(ui->action_2_14,SIGNAL(triggered()),this,SLOT(SYS_Setting()));
-    connect(ui->action_2_15,SIGNAL(triggered()),this,SLOT(SYS_RecordSetting()));
-    connect(ui->action_2_16,SIGNAL(triggered()),this,SLOT(SYS_UserSetting()));
-    connect(ui->action_2_17,SIGNAL(triggered()),this,SLOT(SYS_AC_Calibration()));
+    connect(ui->action_4_1,SIGNAL(triggered()),this,SLOT(SYS_ParaSetting()));
+    connect(ui->action_4_2,SIGNAL(triggered()),this,SLOT(SYS_ProtocSetting()));
+    connect(ui->action_4_3,SIGNAL(triggered()),this,SLOT(SYS_UserProtocSetting()));
+    connect(ui->action_4_4,SIGNAL(triggered()),this,SLOT(SYS_StandardParaSetting()));
+    connect(ui->action_4_5,SIGNAL(triggered()),this,SLOT(SYS_ErrorCheckManager()));
 
-    connect(ui->action_3_11,SIGNAL(triggered()),this,SLOT(About_Version()));
-    //connect(ui->action_3_12,SIGNAL(triggered()),this,SLOT(About_User()));
-    */
+    connect(ui->action_5_1,SIGNAL(triggered()),this,SLOT(SYS_ChangeCheckManager()));
+    connect(ui->action_5_2,SIGNAL(triggered()),this,SLOT(SYS_TimeSync()));
+
+    connect(ui->action_6_1,SIGNAL(triggered()),this,SLOT(SYS_ACSource()));
+    connect(ui->action_6_2,SIGNAL(triggered()),this,SLOT(SYS_ACMesure()));
+    connect(ui->action_6_3,SIGNAL(triggered()),this,SLOT(SYS_Setting()));
+    connect(ui->action_6_4,SIGNAL(triggered()),this,SLOT(SYS_RecordSetting()));
+    connect(ui->action_6_5,SIGNAL(triggered()),this,SLOT(SYS_UserSetting()));
+    connect(ui->action_6_6,SIGNAL(triggered()),this,SLOT(SYS_AC_Calibration()));
+    connect(ui->action_6_7,SIGNAL(triggered()),this,SLOT(SYS_RecordSetting()));
+    connect(ui->action_6_8,SIGNAL(triggered()),this,SLOT(SYS_UserSetting()));
+    connect(ui->action_6_9,SIGNAL(triggered()),this,SLOT(SYS_AC_Calibration()));
+    connect(ui->action_6_10,SIGNAL(triggered()),this,SLOT(SYS_RecordSetting()));
+*/
+    connect(ui->action_7_1,SIGNAL(triggered()),this,SLOT(About_Version()));
+
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
-
+/***********************************************************
+    MAIN WINDOW PROCESS
+***********************************************************/
 void MainWindow::MainPage_Repaint()
 {
     ui->label_pic->resize(this->width(),this->height());
@@ -84,7 +96,7 @@ void MainWindow::changeEvent(QEvent *event)
 //窗体关闭事件监听
 void MainWindow::closeEvent(QCloseEvent *event)
 {
-    switch( QMessageBox::information(this,tr("提示"),tr("确定退出该软件?"),tr("确定"), tr("取消"),0,1))
+    switch(QMessageBox::question(this,tr("提示"),tr("确定退出该软件?"),tr("确定"), tr("取消"),nullptr,1))
     {
     case 0:
         event->accept();
@@ -96,42 +108,84 @@ void MainWindow::closeEvent(QCloseEvent *event)
     }
 }
 
+//显示状态刷新
+void MainWindow::Update_Time()
+{
+    QDateTime local(QDateTime::currentDateTime());
+    localTime = local.toString("yyyy-M-d h:m:s");
+}
+
+void MainWindow::Update_CommStatus(QString status)
+{
+    Update_Time();
+    statusBar()->clearMessage();
+    statusBar()->showMessage(localTime);
+}
+
+void MainWindow::ComCom_Check()
+{
+    Update_CommStatus(tr("正在搜索可用的串口..."));
+}
+
+/**********************************************************
+    OTHER PROCESS
+**********************************************************/
+void MainWindow::Com_Setting()
+{
+    QDialog* para_dialog = new uart_com(this);
+    para_dialog->setWindowModality(Qt::ApplicationModal);
+    para_dialog->setModal(true);
+    para_dialog->show();
+}
+
+void MainWindow::Com_Connect()
+{
+    QMessageBox message(QMessageBox::NoIcon, "联机通讯", "正在联机中...");
+    //message.setIconPixmap(QPixmap("icon.png"));
+    message.exec();
+}
 //RTU参数录入
 void MainWindow::RTU_ParaSetting()
 {
     qDebug()<<"RTU参数录入";
-    rtu_para para_dialog;
-    para_dialog.exec();
+
+    QDialog* para_dialog = new rtu_para(this);
+    para_dialog->setWindowModality(Qt::ApplicationModal);
+    para_dialog->setModal(false);
+    para_dialog->show();
 }
 
-void MainWindow::UART()
-{
-    uart_com dialog;
-    dialog.exec();
-}
 //外观检查、耐压试验
 void MainWindow::RTU_FaceCheck()
 {
     qDebug()<<"外观检查、耐压试验";
-    rtu_facecheck para_dialog;
-    //this->close();
-    para_dialog.exec();
+
+    QDialog* para_dialog = new rtu_facecheck(this);
+    para_dialog->setWindowModality(Qt::ApplicationModal);
+    para_dialog->setModal(false);
+    para_dialog->show();
 }
 
 //遥测误差检验
 void MainWindow::RTU_TelError()
 {
     qDebug()<<"遥测误差检验";
-    rtu_telerror para_dialog;
-    para_dialog.exec();
+
+    QDialog* para_dialog = new rtu_telerror(this);
+    para_dialog->setWindowModality(Qt::ApplicationModal);
+    para_dialog->setModal(false);
+    para_dialog->show();
 }
 
 //改变量
 void MainWindow::RTU_ChangeCheck()
 {
     qDebug()<<"改变量";
-    rtu_changecheck para_dialog;
-    para_dialog.exec();
+
+    QDialog* para_dialog = new rtu_changecheck(this);
+    para_dialog->setWindowModality(Qt::ApplicationModal);
+    para_dialog->setModal(false);
+    para_dialog->show();
 }
 
 //现场校验
@@ -221,13 +275,6 @@ void MainWindow::SYS_ACSource()
     qDebug()<<"交流标准功率源";
 }
 
-//直流标准源
-//void MainWindow::SYS_DCSource()
-//{
-//    qDebug()<<"直流标准源";
-//    QMessageBox::information(nullptr, tr("提示"), tr("暂未实现！"),tr("确定"));
-//}
-
 //交流测量
 void MainWindow::SYS_ACMesure()
 {
@@ -262,12 +309,9 @@ void MainWindow::SYS_AC_Calibration()
 void MainWindow::About_Version()
 {       
     qDebug()<<"关于版本信息";
-    About_verion para_dialog;
-    para_dialog.exec();
+    QDialog* para_dialog = new About_verion(this);
+    para_dialog->setWindowModality(Qt::ApplicationModal);
+    para_dialog->setModal(false);
+    para_dialog->show();
 }
 
-//关于用户
-void MainWindow::About_User()
-{
-    qDebug()<<"关于用户";
-}

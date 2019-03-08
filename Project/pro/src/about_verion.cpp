@@ -7,6 +7,7 @@ About_verion::About_verion(QWidget *parent) :
 {
     QString title = tr("软件版本信息");
     ui->setupUi(this);
+    this->setModal(true);
     this->setWindowTitle(title);
 }
 
