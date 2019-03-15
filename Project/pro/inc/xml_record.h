@@ -9,7 +9,6 @@
 #include <QTextStream>
 #include <QDebug>
 
-void xml_read(QString FileName);
-void xml_write(QString FileName,int8_t type);
-
+void xml_write(QString FileName);
+void xml_add(QString FileName);
 #endif // XML_RECORD_H

@@ -12,6 +12,8 @@ rtu_para::rtu_para(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setFixedSize(this->width (),this->height ());
+
+    ui->lb_record_page->setText(QString::number(1));
 }
 
 rtu_para::~rtu_para()
@@ -48,7 +50,7 @@ void rtu_para::on_pb_save_clicked()
 {
     rtu_para_para.para_total_page++;
     rtu_para_para.para_current_page++;
-    ui->te_record_page->setText(QString::number(rtu_para_para.para_total_page));
+    ui->lb_record_page->setText(QString::number(rtu_para_para.para_total_page));
 
     ui->pb_add->setText("增加");
     ui->pb_save->setEnabled(false);
@@ -62,6 +64,15 @@ void rtu_para::on_pb_save_clicked()
     QDateTime local(QDateTime::currentDateTime());
     rtu_para_para.localTime = local.toString("yyyy-MM-dd:hh:mm:ss");
     qDebug()<<rtu_para_para.localTime;
+
+
+
+    if(1 == rtu_para_para.para_total_page)    {
+        xml_write("rtu_para.xml");
+    }
+    else {
+        xml_add("rtu_para.xml");
+    }
 }
 
 void rtu_para::on_pb_previous_clicked()
@@ -80,7 +91,7 @@ void rtu_para::on_pb_previous_clicked()
         ui->pb_next->setEnabled(true);
     }
 
-    ui->te_record_page->setText(QString::number(rtu_para_para.para_current_page));
+    ui->lb_record_page->setText(QString::number(rtu_para_para.para_current_page));
 
 }
 
@@ -96,39 +107,5 @@ void rtu_para::on_pb_next_clicked()
     else {
         ui->pb_previous->setEnabled(true);
     }
-    ui->te_record_page->setText(QString::number(rtu_para_para.para_current_page));
-
-
-    //打开或创建文件
-    QFile file("rtu_para.xml"); //相对路径、绝对路径、资源路径都行
-    if(!file.open(QFile::ReadOnly))
-        return;
-
-    QDomDocument doc;
-    if(!doc.setContent(&file))
-    {
-        file.close();
-        return;
-    }
-    file.close();
-
-    QDomElement root=doc.documentElement(); //返回根节点
-    qDebug()<<root.nodeName();
-    QDomNode node=root.firstChild(); //获得第一个子节点
-    while(!node.isNull())  //如果节点不空
-    {
-        if(node.isElement()) //如果节点是元素
-        {
-            QDomElement e=node.toElement(); //转换为元素，注意元素和节点是两个数据结构，其实差不多
-            qDebug()<<e.tagName()<<" "<<e.attribute("id")<<" "<<e.attribute("time"); //打印键值对，tagName和nodeName是一个东西
-            QDomNodeList list=e.childNodes();
-            for(int i=0;i<list.count();i++) //遍历子元素，count和size都可以用,可用于标签数计数
-            {
-                QDomNode n=list.at(i);
-                if(node.isElement())
-                    qDebug()<<n.nodeName()<<":"<<n.toElement().text();
-            }
-        }
-        node=node.nextSibling(); //下一个兄弟节点,nextSiblingElement()是下一个兄弟元素，都差不多
-    }
+    ui->lb_record_page->setText(QString::number(rtu_para_para.para_current_page));
 }
