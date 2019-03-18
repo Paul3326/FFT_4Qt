@@ -26,7 +26,6 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     QTimer *timer = new QTimer(this);
     QString pic_path = QApplication::applicationDirPath()+"/pic/desktop.jpg";
-
     ui->setupUi(this);
 
     //桌面背景图片
@@ -36,9 +35,21 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->label_pic->setAutoFillBackground(true);
     ui->label_pic->resize(this->width(),this->height());
 
+    currentStatusLabel = new QLabel;
+    ui->statusBar->addWidget(currentStatusLabel);
+
+    currentTimeLabel = new QLabel;
+    ui->statusBar->addWidget(currentTimeLabel);
+
+
+    status_str = "搜索串口中......";
+    //每隔100ms发送timeout的信号
+    connect(timer, SIGNAL(timeout()),this,SLOT(Update_Status()));
+    timer->start(100);
+
     //每隔100ms进行一次端口检查
-    connect(timer, SIGNAL(timeout()), this, SLOT(ComCom_Check()));
-    timer->start(200);
+    //connect(timer, SIGNAL(timeout()), this, SLOT(ComCom_Check()));
+    //timer->start(200);
 
     connect(ui->action_1_2,SIGNAL(triggered()),this,SLOT(Com_Setting()));
     connect(ui->action_1_3,SIGNAL(triggered()),this,SLOT(Com_Connect()));
@@ -109,22 +120,20 @@ void MainWindow::closeEvent(QCloseEvent *event)
 }
 
 //显示状态刷新
-void MainWindow::Update_Time()
+void MainWindow::Update_Status()
 {
     QDateTime local(QDateTime::currentDateTime());
-    localTime = local.toString("yyyy-M-d h:m:s");
-}
+    localTime = local.toString("yyyy-MM-dd hh:mm:ss");
 
-void MainWindow::Update_CommStatus(QString status)
-{
-    Update_Time();
-    statusBar()->clearMessage();
-    statusBar()->showMessage(localTime);
+    currentStatusLabel->setText(status_str);
+    currentTimeLabel->setText(localTime);
+
+
 }
 
 void MainWindow::ComCom_Check()
 {
-    Update_CommStatus(tr("正在搜索可用的串口..."));
+   status_str = "Connected!!!";
 }
 
 /**********************************************************

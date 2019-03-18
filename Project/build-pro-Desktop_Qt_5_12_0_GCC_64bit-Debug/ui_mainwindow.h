@@ -254,7 +254,7 @@ public:
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         label_pic = new QLabel(centralWidget);
         label_pic->setObjectName(QString::fromUtf8("label_pic"));
-        label_pic->setGeometry(QRect(0, 0, 1035, 640));
+        label_pic->setGeometry(QRect(0, 0, 1035, 610));
         sizePolicy.setHeightForWidth(label_pic->sizePolicy().hasHeightForWidth());
         label_pic->setSizePolicy(sizePolicy);
         label_pic->setLayoutDirection(Qt::LeftToRight);
@@ -281,7 +281,13 @@ public:
         MainWindow->setMenuBar(menuBar);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QString::fromUtf8("statusBar"));
-        statusBar->setLayoutDirection(Qt::RightToLeft);
+        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(statusBar->sizePolicy().hasHeightForWidth());
+        statusBar->setSizePolicy(sizePolicy1);
+        statusBar->setLayoutDirection(Qt::LeftToRight);
+        statusBar->setAutoFillBackground(true);
         MainWindow->setStatusBar(statusBar);
 
         menuBar->addAction(menu_Connect->menuAction());

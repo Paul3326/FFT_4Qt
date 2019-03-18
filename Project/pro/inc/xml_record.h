@@ -11,4 +11,6 @@
 
 void xml_write(QString FileName);
 void xml_add(QString FileName);
+void xml_show(QString FileName,uint8_t pagenumber);
+void xml_delete(QString FileName,uint8_t pagenumber);
 #endif // XML_RECORD_H

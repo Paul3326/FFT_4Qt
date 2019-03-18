@@ -8,6 +8,8 @@
 #include <QDebug>
 #include <QMessageBox>
 #include <QCloseEvent>
+#include <QDateTime>
+#include <QTimer>
 
 namespace Ui {
 class MainWindow;
@@ -21,13 +23,12 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     QString localTime;
-
-    void Update_CommStatus(QString status);
-    void Update_Time();
+    QString status_str;
 
 public slots:
     void MainPage_Repaint();
     void ComCom_Check();
+    void Update_Status();
 
     void Com_Connect();
     void Com_Setting();
@@ -61,7 +62,8 @@ public slots:
 private:
     Ui::MainWindow *ui;
     QPixmap pic;
-    int cnt;
+    QLabel *currentTimeLabel;
+    QLabel *currentStatusLabel;
 
 protected:
     void changeEvent(QEvent * event);
