@@ -20,10 +20,15 @@ typedef struct __comcom__{
 }COM_Strc;
 extern COM_Strc ComCom;
 
+typedef struct __button__{
+    uint8_t count;
+}Button_Strc;
+
 typedef struct __rtu_para__{
     QString localTime;
     uint16_t para_total_page;
     uint16_t para_current_page;
+    Button_Strc Add_Cancle_Button;
 
     QString rtu_station_name;
     QString rtu_location;

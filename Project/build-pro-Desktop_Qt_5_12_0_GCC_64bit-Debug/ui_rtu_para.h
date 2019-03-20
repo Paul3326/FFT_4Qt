@@ -74,12 +74,13 @@ public:
     QTextEdit *te_CT_Ratio;
     QPushButton *pb_add;
     QPushButton *pb_save;
-    QPushButton *pb_search;
     QPushButton *pb_delete;
     QPushButton *pb_previous;
     QPushButton *pb_next;
     QLabel *lb_record_page;
     QLabel *label_26;
+    QLabel *label_27;
+    QLabel *label_28;
 
     void setupUi(QDialog *rtu_para)
     {
@@ -95,6 +96,7 @@ public:
         rtu_para->setWindowTitle(QString::fromUtf8("RTU\345\237\272\346\234\254\345\217\202\346\225\260\345\275\225\345\205\245"));
         rtu_para->setLocale(QLocale(QLocale::Chinese, QLocale::China));
         cb_rtu_station = new QComboBox(rtu_para);
+        cb_rtu_station->addItem(QString());
         cb_rtu_station->setObjectName(QString::fromUtf8("cb_rtu_station"));
         cb_rtu_station->setGeometry(QRect(130, 20, 161, 30));
         cb_rtu_station->setLocale(QLocale(QLocale::Chinese, QLocale::China));
@@ -106,6 +108,7 @@ public:
         label->setGeometry(QRect(36, 20, 81, 31));
         label->setLocale(QLocale(QLocale::Chinese, QLocale::China));
         cb_rtu_producer = new QComboBox(rtu_para);
+        cb_rtu_producer->addItem(QString());
         cb_rtu_producer->setObjectName(QString::fromUtf8("cb_rtu_producer"));
         cb_rtu_producer->setGeometry(QRect(480, 70, 281, 30));
         cb_rtu_producer->setEditable(true);
@@ -118,6 +121,7 @@ public:
         label_3->setGeometry(QRect(370, 20, 101, 31));
         label_3->setLocale(QLocale(QLocale::Chinese, QLocale::China));
         cb_position = new QComboBox(rtu_para);
+        cb_position->addItem(QString());
         cb_position->setObjectName(QString::fromUtf8("cb_position"));
         cb_position->setGeometry(QRect(480, 20, 281, 30));
         cb_position->setEditable(true);
@@ -125,6 +129,7 @@ public:
         label_4->setObjectName(QString::fromUtf8("label_4"));
         label_4->setGeometry(QRect(50, 120, 101, 31));
         cb_rtu_number = new QComboBox(rtu_para);
+        cb_rtu_number->addItem(QString());
         cb_rtu_number->setObjectName(QString::fromUtf8("cb_rtu_number"));
         cb_rtu_number->setGeometry(QRect(130, 70, 161, 30));
         cb_rtu_number->setEditable(true);
@@ -136,6 +141,7 @@ public:
         label_6->setObjectName(QString::fromUtf8("label_6"));
         label_6->setGeometry(QRect(400, 170, 121, 31));
         cb_rtu_type = new QComboBox(rtu_para);
+        cb_rtu_type->addItem(QString());
         cb_rtu_type->setObjectName(QString::fromUtf8("cb_rtu_type"));
         cb_rtu_type->setGeometry(QRect(480, 170, 281, 30));
         cb_rtu_type->setEditable(true);
@@ -197,6 +203,7 @@ public:
         label_13->setObjectName(QString::fromUtf8("label_13"));
         label_13->setGeometry(QRect(400, 270, 101, 31));
         cb_rtu_protocl = new QComboBox(rtu_para);
+        cb_rtu_protocl->addItem(QString());
         cb_rtu_protocl->setObjectName(QString::fromUtf8("cb_rtu_protocl"));
         cb_rtu_protocl->setGeometry(QRect(480, 270, 281, 30));
         cb_rtu_protocl->setMaxVisibleItems(5);
@@ -204,6 +211,7 @@ public:
         label_14->setObjectName(QString::fromUtf8("label_14"));
         label_14->setGeometry(QRect(20, 420, 101, 31));
         cb_dc_V = new QComboBox(rtu_para);
+        cb_dc_V->addItem(QString());
         cb_dc_V->setObjectName(QString::fromUtf8("cb_dc_V"));
         cb_dc_V->setGeometry(QRect(130, 420, 161, 30));
         cb_dc_V->setEditable(true);
@@ -212,6 +220,7 @@ public:
         label_15->setObjectName(QString::fromUtf8("label_15"));
         label_15->setGeometry(QRect(20, 470, 101, 31));
         cb_dc_A = new QComboBox(rtu_para);
+        cb_dc_A->addItem(QString());
         cb_dc_A->setObjectName(QString::fromUtf8("cb_dc_A"));
         cb_dc_A->setGeometry(QRect(130, 470, 161, 30));
         cb_dc_A->setEditable(true);
@@ -260,6 +269,7 @@ public:
         label_19->setObjectName(QString::fromUtf8("label_19"));
         label_19->setGeometry(QRect(412, 470, 101, 31));
         cb_checker1 = new QComboBox(rtu_para);
+        cb_checker1->addItem(QString());
         cb_checker1->setObjectName(QString::fromUtf8("cb_checker1"));
         cb_checker1->setGeometry(QRect(480, 470, 181, 30));
         cb_checker1->setEditable(true);
@@ -342,6 +352,7 @@ public:
         label_21->setObjectName(QString::fromUtf8("label_21"));
         label_21->setGeometry(QRect(412, 520, 101, 31));
         cb_checker2 = new QComboBox(rtu_para);
+        cb_checker2->addItem(QString());
         cb_checker2->setObjectName(QString::fromUtf8("cb_checker2"));
         cb_checker2->setGeometry(QRect(480, 520, 181, 30));
         cb_checker2->setEditable(true);
@@ -366,13 +377,13 @@ public:
         label_23->setGeometry(QRect(372, 370, 100, 30));
         label_24 = new QLabel(rtu_para);
         label_24->setObjectName(QString::fromUtf8("label_24"));
-        label_24->setGeometry(QRect(53, 620, 51, 31));
+        label_24->setGeometry(QRect(710, 450, 21, 31));
         label_25 = new QLabel(rtu_para);
         label_25->setObjectName(QString::fromUtf8("label_25"));
         label_25->setGeometry(QRect(644, 570, 31, 31));
         pb_tel_para = new QPushButton(rtu_para);
         pb_tel_para->setObjectName(QString::fromUtf8("pb_tel_para"));
-        pb_tel_para->setGeometry(QRect(650, 619, 121, 31));
+        pb_tel_para->setGeometry(QRect(620, 620, 131, 31));
         te_rtu_line = new QTextEdit(rtu_para);
         te_rtu_line->setObjectName(QString::fromUtf8("te_rtu_line"));
         te_rtu_line->setGeometry(QRect(130, 120, 631, 31));
@@ -396,32 +407,35 @@ public:
         te_CT_Ratio->setTabChangesFocus(true);
         pb_add = new QPushButton(rtu_para);
         pb_add->setObjectName(QString::fromUtf8("pb_add"));
-        pb_add->setGeometry(QRect(110, 620, 61, 31));
+        pb_add->setGeometry(QRect(160, 620, 61, 31));
         pb_add->setLocale(QLocale(QLocale::Chinese, QLocale::China));
         pb_save = new QPushButton(rtu_para);
         pb_save->setObjectName(QString::fromUtf8("pb_save"));
-        pb_save->setGeometry(QRect(200, 620, 61, 31));
-        pb_search = new QPushButton(rtu_para);
-        pb_search->setObjectName(QString::fromUtf8("pb_search"));
-        pb_search->setGeometry(QRect(290, 620, 61, 31));
+        pb_save->setGeometry(QRect(250, 620, 61, 31));
         pb_delete = new QPushButton(rtu_para);
         pb_delete->setObjectName(QString::fromUtf8("pb_delete"));
-        pb_delete->setGeometry(QRect(380, 620, 61, 31));
+        pb_delete->setGeometry(QRect(340, 620, 61, 31));
         pb_previous = new QPushButton(rtu_para);
         pb_previous->setObjectName(QString::fromUtf8("pb_previous"));
-        pb_previous->setGeometry(QRect(470, 620, 61, 31));
+        pb_previous->setGeometry(QRect(430, 620, 61, 31));
         pb_next = new QPushButton(rtu_para);
         pb_next->setObjectName(QString::fromUtf8("pb_next"));
-        pb_next->setGeometry(QRect(560, 620, 61, 31));
+        pb_next->setGeometry(QRect(520, 620, 61, 31));
         lb_record_page = new QLabel(rtu_para);
         lb_record_page->setObjectName(QString::fromUtf8("lb_record_page"));
-        lb_record_page->setGeometry(QRect(20, 620, 31, 31));
-        lb_record_page->setLayoutDirection(Qt::RightToLeft);
+        lb_record_page->setGeometry(QRect(702, 427, 31, 31));
+        lb_record_page->setLayoutDirection(Qt::LeftToRight);
         lb_record_page->setAutoFillBackground(true);
-        lb_record_page->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        lb_record_page->setAlignment(Qt::AlignCenter);
         label_26 = new QLabel(rtu_para);
         label_26->setObjectName(QString::fromUtf8("label_26"));
-        label_26->setGeometry(QRect(10, 620, 21, 31));
+        label_26->setGeometry(QRect(710, 400, 21, 31));
+        label_27 = new QLabel(rtu_para);
+        label_27->setObjectName(QString::fromUtf8("label_27"));
+        label_27->setGeometry(QRect(710, 480, 21, 31));
+        label_28 = new QLabel(rtu_para);
+        label_28->setObjectName(QString::fromUtf8("label_28"));
+        label_28->setGeometry(QRect(710, 510, 21, 31));
 
         retranslateUi(rtu_para);
 
@@ -430,12 +444,22 @@ public:
 
     void retranslateUi(QDialog *rtu_para)
     {
+        cb_rtu_station->setItemText(0, QApplication::translate("rtu_para", "1", nullptr));
+
         label->setText(QApplication::translate("rtu_para", "\345\217\230\347\224\265\347\253\231\345\220\215\347\247\260:", nullptr));
+        cb_rtu_producer->setItemText(0, QApplication::translate("rtu_para", "4", nullptr));
+
         label_2->setText(QApplication::translate("rtu_para", "\345\210\266\351\200\240\345\216\202\345\256\266:", nullptr));
         label_3->setText(QApplication::translate("rtu_para", "\350\243\205\347\275\256\345\256\211\350\243\205\344\275\215\347\275\256:", nullptr));
+        cb_position->setItemText(0, QApplication::translate("rtu_para", "2", nullptr));
+
         label_4->setText(QApplication::translate("rtu_para", "\347\272\277\350\267\257\345\220\215\347\247\260:", nullptr));
+        cb_rtu_number->setItemText(0, QApplication::translate("rtu_para", "3", nullptr));
+
         label_5->setText(QApplication::translate("rtu_para", "\345\207\272\345\216\202\347\274\226\345\217\267:", nullptr));
         label_6->setText(QApplication::translate("rtu_para", "RTU\345\236\213\345\217\267:", nullptr));
+        cb_rtu_type->setItemText(0, QApplication::translate("rtu_para", "6", nullptr));
+
         label_7->setText(QApplication::translate("rtu_para", "\347\255\211        \347\272\247:", nullptr));
         cb_rtu_grade->setItemText(0, QApplication::translate("rtu_para", "0.1", nullptr));
         cb_rtu_grade->setItemText(1, QApplication::translate("rtu_para", "0.2", nullptr));
@@ -463,8 +487,14 @@ public:
         cb_rtu_lineway->setItemText(3, QApplication::translate("rtu_para", "\344\270\211\347\233\270\344\270\211\347\272\277(\345\212\240IB)", nullptr));
 
         label_13->setText(QApplication::translate("rtu_para", "\351\200\232\350\256\257\345\215\217\350\256\256:", nullptr));
+        cb_rtu_protocl->setItemText(0, QApplication::translate("rtu_para", "\351\273\230\350\256\244\346\226\271\346\241\210", nullptr));
+
         label_14->setText(QApplication::translate("rtu_para", "\347\233\264\346\265\201\347\224\265\345\216\213\350\276\223\345\205\245:", nullptr));
+        cb_dc_V->setItemText(0, QApplication::translate("rtu_para", "10", nullptr));
+
         label_15->setText(QApplication::translate("rtu_para", "\347\233\264\346\265\201\347\224\265\346\265\201\350\276\223\345\205\245:", nullptr));
+        cb_dc_A->setItemText(0, QApplication::translate("rtu_para", "11", nullptr));
+
         label_16->setText(QApplication::translate("rtu_para", "\346\243\200\351\252\214\350\257\201\345\217\267:", nullptr));
         label_17->setText(QApplication::translate("rtu_para", "\345\255\227\347\254\254:", nullptr));
         label_18->setText(QApplication::translate("rtu_para", "\347\216\257\345\242\203\346\270\251\345\272\246:", nullptr));
@@ -496,6 +526,8 @@ public:
         cb_temper->setItemText(25, QApplication::translate("rtu_para", "40", nullptr));
 
         label_19->setText(QApplication::translate("rtu_para", "\346\243\200\345\256\232\345\221\2301:", nullptr));
+        cb_checker1->setItemText(0, QApplication::translate("rtu_para", "12", nullptr));
+
         label_20->setText(QApplication::translate("rtu_para", "\347\233\270\345\257\271\346\271\277\345\272\246:", nullptr));
         cb_humdity->setItemText(0, QApplication::translate("rtu_para", "25", nullptr));
         cb_humdity->setItemText(1, QApplication::translate("rtu_para", "26", nullptr));
@@ -565,23 +597,51 @@ public:
         cb_humdity->setItemText(65, QApplication::translate("rtu_para", "90", nullptr));
 
         label_21->setText(QApplication::translate("rtu_para", "\346\243\200\345\256\232\345\221\2302:", nullptr));
+        cb_checker2->setItemText(0, QApplication::translate("rtu_para", "13", nullptr));
+
         label_22->setText(QApplication::translate("rtu_para", "\346\224\271\345\217\230\351\207\217\346\243\200\345\256\232\346\226\271\346\241\210:", nullptr));
         cb_variable_check->setItemText(0, QApplication::translate("rtu_para", "\351\273\230\350\256\244\346\226\271\346\241\210", nullptr));
 
         cb_error_check->setItemText(0, QApplication::translate("rtu_para", "\351\273\230\350\256\244\346\226\271\346\241\210", nullptr));
 
         label_23->setText(QApplication::translate("rtu_para", "\350\257\257\345\267\256\346\243\200\345\256\232\346\226\271\346\241\210:", nullptr));
-        label_24->setText(QApplication::translate("rtu_para", "\346\235\241\350\256\260\345\275\225", nullptr));
+        label_24->setText(QApplication::translate("rtu_para", "\346\235\241", nullptr));
         label_25->setText(QApplication::translate("rtu_para", "\345\217\267", nullptr));
         pb_tel_para->setText(QApplication::translate("rtu_para", "\344\270\213\344\270\200\346\255\245:\351\201\245\346\216\247\345\217\202\346\225\260", nullptr));
+        te_rtu_line->setHtml(QApplication::translate("rtu_para", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">5</p></body></html>", nullptr));
+        te_uid_number->setHtml(QApplication::translate("rtu_para", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">14</p></body></html>", nullptr));
+        te_check_number->setHtml(QApplication::translate("rtu_para", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">8</p></body></html>", nullptr));
+        te_PT_Ratio->setHtml(QApplication::translate("rtu_para", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">7</p></body></html>", nullptr));
+        te_CT_Ratio->setHtml(QApplication::translate("rtu_para", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">9</p></body></html>", nullptr));
         pb_add->setText(QApplication::translate("rtu_para", "\345\242\236\345\212\240", nullptr));
         pb_save->setText(QApplication::translate("rtu_para", "\344\277\235\345\255\230", nullptr));
-        pb_search->setText(QApplication::translate("rtu_para", "\346\237\245\350\257\242", nullptr));
         pb_delete->setText(QApplication::translate("rtu_para", "\345\210\240\351\231\244", nullptr));
         pb_previous->setText(QApplication::translate("rtu_para", "\344\270\212\344\270\200\344\270\252", nullptr));
         pb_next->setText(QApplication::translate("rtu_para", "\344\270\213\344\270\200\344\270\252", nullptr));
         lb_record_page->setText(QString());
         label_26->setText(QApplication::translate("rtu_para", "\347\254\254", nullptr));
+        label_27->setText(QApplication::translate("rtu_para", "\350\256\260", nullptr));
+        label_28->setText(QApplication::translate("rtu_para", "\345\275\225", nullptr));
         Q_UNUSED(rtu_para);
     } // retranslateUi
 
