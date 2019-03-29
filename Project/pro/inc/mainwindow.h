@@ -23,19 +23,14 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     QString localTime;
-    QString status_str;
 
 public slots:
     void MainPage_Repaint();
-    void ComCom_Check();
     void Update_Status();
 
     void Com_Connect();
     void Com_Setting();
     void RTU_ParaSetting();
-
-
-
     void RTU_FaceCheck();
     void RTU_TelError();
     void RTU_ChangeCheck();

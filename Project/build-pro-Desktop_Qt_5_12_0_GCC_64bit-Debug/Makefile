@@ -926,6 +926,11 @@ moc_mainwindow.cpp: ../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/QMainWi
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qdialog.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/QCloseEvent \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QDateTime \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qdatetime.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QTimer \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qtimer.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qbasictimer.h \
 		../pro/inc/mainwindow.h \
 		moc_predefs.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/bin/moc
@@ -1037,7 +1042,10 @@ moc_rtu_para.cpp: ../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/QDialog \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qtouchdevice.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QDebug \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QString \
-		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QStringList \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QDateTime \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qdatetime.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/QMessageBox \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qmessagebox.h \
 		../pro/inc/rtu_para.h \
 		moc_predefs.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/bin/moc
@@ -2908,6 +2916,11 @@ main.o: ../pro/main.cpp ../pro/inc/mainwindow.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qdialog.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/QCloseEvent \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QDateTime \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qdatetime.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QTimer \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qtimer.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qbasictimer.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/QApplication \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qapplication.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qcoreapplication.h \
@@ -3037,6 +3050,11 @@ mainwindow.o: ../pro/src/mainwindow.cpp ../pro/inc/mainwindow.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qdialog.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/QCloseEvent \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QDateTime \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qdatetime.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QTimer \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qtimer.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qbasictimer.h \
 		ui_mainwindow.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QVariant \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/QAction \
@@ -3061,7 +3079,6 @@ mainwindow.o: ../pro/src/mainwindow.cpp ../pro/inc/mainwindow.h \
 		../pro/inc/rtu_para.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/QDialog \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QString \
-		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QStringList \
 		../pro/inc/rtu_facecheck.h \
 		../pro/inc/rtu_telerror.h \
 		../pro/inc/rtu_changecheck.h \
@@ -3070,9 +3087,6 @@ mainwindow.o: ../pro/src/mainwindow.cpp ../pro/inc/mainwindow.h \
 		../pro/inc/rtu_excelmanger.h \
 		../pro/inc/sys_para.h \
 		../pro/inc/uart_com.h \
-		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QTimer \
-		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qtimer.h \
-		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qbasictimer.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtSerialPort/QSerialPort \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtSerialPort/qserialport.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtSerialPort/qserialportglobal.h \
@@ -3080,7 +3094,6 @@ mainwindow.o: ../pro/src/mainwindow.cpp ../pro/inc/mainwindow.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtSerialPort/qserialportinfo.h \
 		../pro/inc/sys_timesync.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QDate \
-		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qdatetime.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/QRegExpValidator \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qvalidator.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qregularexpression.h \
@@ -3200,7 +3213,10 @@ rtu_para.o: ../pro/src/rtu_para.cpp ../pro/inc/rtu_para.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qtouchdevice.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QDebug \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QString \
-		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QStringList \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QDateTime \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qdatetime.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/QMessageBox \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qmessagebox.h \
 		ui_rtu_para.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QLocale \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QVariant \
@@ -3245,8 +3261,11 @@ rtu_para.o: ../pro/src/rtu_para.cpp ../pro/inc/rtu_para.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QDir \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qdir.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qfileinfo.h \
-		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QXmlStreamWriter \
-		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qxmlstream.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtXml/QDomDocument \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtXml/qdom.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtXml/qtxmlglobal.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtXml/qtxml-config.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QTextStream \
 		../pro/inc/global.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o rtu_para.o ../pro/src/rtu_para.cpp
 
@@ -3407,7 +3426,10 @@ rtu_facecheck.o: ../pro/src/rtu_facecheck.cpp ../pro/inc/rtu_facecheck.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qpen.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/QWidget \
 		../pro/inc/rtu_para.h \
-		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QStringList
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QDateTime \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qdatetime.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/QMessageBox \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qmessagebox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o rtu_facecheck.o ../pro/src/rtu_facecheck.cpp
 
 rtu_telerror.o: ../pro/src/rtu_telerror.cpp ../pro/inc/rtu_telerror.h \
@@ -5270,7 +5292,8 @@ uart_com.o: ../pro/src/uart_com.cpp ../pro/inc/uart_com.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qtextcursor.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qtextformat.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qpen.h \
-		../pro/inc/global.h
+		../pro/inc/global.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QString
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o uart_com.o ../pro/src/uart_com.cpp
 
 about_verion.o: ../pro/src/about_verion.cpp ../pro/inc/about_verion.h \
@@ -5502,9 +5525,17 @@ xml_record.o: ../pro/src/xml_record.cpp ../pro/inc/xml_record.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qurlquery.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qvector2d.h \
 		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtGui/qtouchdevice.h \
-		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QXmlStreamWriter \
-		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/qxmlstream.h \
-		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QDebug
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/QMessageBox \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qmessagebox.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtWidgets/qdialog.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtXml/QDomDocument \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtXml/qdom.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtXml/qtxmlglobal.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtXml/qtxml-config.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QTextStream \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QDebug \
+		../pro/inc/global.h \
+		../../../../Qt5.12.0/5.12.0/gcc_64/include/QtCore/QString
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o xml_record.o ../pro/src/xml_record.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 

@@ -41,8 +41,6 @@ MainWindow::MainWindow(QWidget *parent) :
     currentTimeLabel = new QLabel;
     ui->statusBar->addWidget(currentTimeLabel);
 
-
-    status_str = "搜索串口中......";
     //每隔100ms发送timeout的信号
     connect(timer, SIGNAL(timeout()),this,SLOT(Update_Status()));
     timer->start(100);
@@ -95,7 +93,13 @@ void MainWindow::MainPage_Repaint()
 {
     ui->label_pic->resize(this->width(),this->height());
 }
-//窗体最大最小化事件监听
+
+/*************************************************
+**Function:       窗体最大最小化事件监听
+**Description:    无
+**Param:          无
+**Return:         无
+*************************************************/
 void MainWindow::changeEvent(QEvent *event)
 {
     if(event->type()==QEvent::WindowStateChange)
@@ -104,7 +108,12 @@ void MainWindow::changeEvent(QEvent *event)
     }
 }
 
-//窗体关闭事件监听
+/*************************************************
+**Function:       窗体关闭事件监听
+**Description:    无
+**Param:          无
+**Return:         无
+*************************************************/
 void MainWindow::closeEvent(QCloseEvent *event)
 {
     switch(QMessageBox::question(this,tr("提示"),tr("确定退出该软件?"),tr("确定"), tr("取消"),nullptr,1))
@@ -119,23 +128,29 @@ void MainWindow::closeEvent(QCloseEvent *event)
     }
 }
 
-//显示状态刷新
+/*************************************************
+**Function:       显示状态刷新
+**Description:    无
+**Param:          无
+**Return:         无
+*************************************************/
 void MainWindow::Update_Status()
 {
     QDateTime local(QDateTime::currentDateTime());
     localTime = local.toString("yyyy-MM-dd hh:mm:ss");
 
-    currentStatusLabel->setText(status_str);
+    if(CONNECT != ComCom.state)
+    {
+        currentStatusLabel->setText("搜索串口中,请稍后...");
+    }
+    else
+    {
+        currentStatusLabel->setText("连接成功");
+    }
     currentTimeLabel->setText(localTime);
 
 
 }
-
-void MainWindow::ComCom_Check()
-{
-   status_str = "Connected!!!";
-}
-
 /**********************************************************
     OTHER PROCESS
 **********************************************************/

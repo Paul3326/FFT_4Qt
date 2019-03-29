@@ -14,8 +14,12 @@ typedef enum{
     RESEARCH,
 }COM_STATE_ENUM;
 
+typedef enum{
+    YES,
+    NO,
+}COM_FLAG;
+
 typedef struct __comcom__{
-    bool IsFirstFlag;
     uint8_t state;
 }COM_Strc;
 extern COM_Strc ComCom;
